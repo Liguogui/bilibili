@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pc端和移动端的判断</title>
+</head>
+<body>
+    <h1></h1>
+</body>
+<script type="text/javascript">
+    function browserRedirect() {
+
+        var sUserAgent= navigator.userAgent.toLowerCase();
+
+        var bIsIpad= sUserAgent.match(/ipad/i) == "ipad";
+
+        var bIsIphoneOs= sUserAgent.match(/iphone os/i) == "iphone os";
+
+        var bIsMidp= sUserAgent.match(/midp/i) == "midp";
+
+        var bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+
+        var bIsUc= sUserAgent.match(/ucweb/i) == "ucweb";
+
+        var bIsAndroid= sUserAgent.match(/android/i) == "android";
+
+        var bIsCE= sUserAgent.match(/windows ce/i) == "windows ce";
+
+        var bIsWM= sUserAgent.match(/windows mobile/i) == "windows mobile";
+
+        if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+            window.location.href= 'http://book.jirengu.com/jirengu-inc/jrg-renwu3/homework/%E9%BB%8E%E5%9B%BD%E8%B4%B5/bilibili/%E7%A7%BB%E5%8A%A8%E7%AB%AF.html';
+        } else {
+            window.location.href= 'http://book.jirengu.com/jirengu-inc/jrg-renwu3/homework/%E9%BB%8E%E5%9B%BD%E8%B4%B5/bilibili/index.html';
+        }
+
+    }
+
+    browserRedirect();
+</script>
+</html>

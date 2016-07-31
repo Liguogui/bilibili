@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>移动端resume</title>
+    <style>
+        html,body{
+            width: 100%;
+        }
+        html,body,ul,li{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            font-size:1px;
+        }
+        body{
+            background-color: #eee;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .clear:after{
+            content:"";
+            display: block;
+            clear:both;
+        }
+        /*导航栏*/
+        nav{
+            background-color: #fff;
+        }
+        nav ul{
+            width:100%;
+        }
+        nav ul li{
+            float:left;
+            width:20%;
+            font-size: 20rem;
+            text-align:center;
+        }
+        nav ul li a{
+            color:#000;
+        }
+        .l{
+            float:left;
+        }
+        .r{
+            float:right;
+        }
+        /*标题栏*/
+        .caption{
+            margin-top:5px;
+            background-color: #fff;
+        }
+        .caption .title1{
+            float: left;
+            padding-left: 5px;
+            font-size: 15rem;
+        }
+        .caption .title1{
+            color:#ff8800;
+        }
+        .caption .title2{
+            float: right;
+            padding-right: 5px;
+            font-size: 15rem;
+        }
+        .caption .title2{
+            color:#ff8800;
+        }
+        /*四叶区*/
+        .hot-show{
+            background-color: #fff;
+        }
+        .hot-show-li{
+            position:relative;
+            float: left;
+            box-sizing: border-box;
+            width: 50%;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-bottom: 5px;
+        }
+        .hot-show-li img{
+            width: 100%;
+            height: 120px;
+            background-color: #fff;
+            border-radius:3px;
+        }
+        .hot-show-li div{
+            width: 100%;
+            height: 30px;
+            text-align: center;
+            font-size: 15rem;
+        }
+        .hot-show-li a{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        /*文字图标*/
+        .cell{
+            margin-top: 5px;
+            background-color: #fff;
+        }
+        .cell-li{
+            box-sizing: border-box;
+            width: 20%;
+            padding-left: 15px;
+            padding-right: 15px;
+            float:left;
+        }
+        .cell-li .font-logo{
+            display: block;
+            width: 100%;
+            height: 50px;
+            border-radius: 10px;
+            text-align: center;
+            line-height:50px;
+            color:#fff;
+            font-size: 15rem;
+        }
+        .cell-li div{
+            text-align: center;
+            font-size: 10rem;
+        }
+        .orange{
+            background-color: #ff8800;
+        }
+        .blue{
+            background-color: deepskyblue;
+        }
+        .pink{
+            background-color: deeppink;
+        }
+        .green{
+            background-color: green;
+        }
+        .purple{
+            background-color: purple;
+        }
+        /*footer区*/
+        .end{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .end li{
+            width: 50%;
+            float: left;
+            text-align: center;
+            font-size: 15rem;
+        }
+        .end li a{
+            color:#000;
+        }
+        /*轮播区*/
+        .carousel{
+            position: relative;
+            overflow: hidden;
+            /*宽度和a标签的宽度或者和img的宽度相同，反正就是和图片相同就可以了*/
+            width: 100%;
+            height: 300px;
+            background-color: #eeeeee;
+        }
+        .carousel .ct{
+            position:absolute;
+        }
+        .carousel .ct li{
+            position:relative;
+            float: left;
+        }
+        .carousel .ct a{
+            display: block;
+            /*width: 414px;*/
+            height: 300px;
+        }
+        .carousel .ct .a1{
+            background: url("img/th.jpg") no-repeat;
+            background-size: cover;
+        }
+        .carousel .ct .a2{
+            background: url("img/小町.jpeg") no-repeat;
+            background-size: cover;
+        }
+        .carousel .ct .a3{
+            background: url("img/千早.jpg") no-repeat;
+            background-size: cover;
+        }
+        .carousel .ct .a4{
+            background: url("img/千早1.jpg") no-repeat;
+            background-size: cover;
+        }
+        .carousel .bullet{
+            position:absolute;
+            bottom:10px;
+            left: 50%;
+            /*transform:translateX(-50%);*/
+            margin-left: -40px;
+        }
+        .carousel .bullet li{
+            width: 10px;
+            height: 10px;
+            float:left;
+            background-color: #fff;
+            cursor: pointer;
+            border-radius: 50%;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        .carousel .bullet li.active{
+            background-color: deeppink;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul class="clear">
+        <li class="l">简历</li>
+        <li class="r"><a href="https://github.com/liguogui" target="_blank">Github</a></li>
+        <li class="r"><a href="http://blog.leanote.com/qq-lgg" target="_blank">博客</a></li>
+    </ul>
+</nav>
+<header>
+    <section>
+        <div class="carousel">
+            <ul class="ct clear">
+                <li><a href="#" class="a1"></a></li>
+                <li><a href="#" class="a2"></a></li>
+                <li><a href="#" class="a3"></a></li>
+                <li><a href="#" class="a4"></a></li>
+            </ul>
+            <ul class="bullet clear">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </section>
+    <section class="cell">
+        <ul class="clear">
+            <li class="cell-li">
+                <a class='font-logo orange' href="http://book.jirengu.com/jirengu-inc/jrg-renwu3/homework/%E9%BB%8E%E5%9B%BD%E8%B4%B5/resume/html-css-demo.html" target="_blank">html</a>
+            </li>
+            <li class="cell-li">
+                <a class='font-logo pink' href="http://book.jirengu.com/jirengu-inc/jrg-renwu3/homework/%E9%BB%8E%E5%9B%BD%E8%B4%B5/resume/html-css-demo.html" target="_blank">css</a>
+            </li>
+            <li class="cell-li">
+                <a class='font-logo purple' href="http://book.jirengu.com/jirengu-inc/jrg-renwu3/homework/%E9%BB%8E%E5%9B%BD%E8%B4%B5/resume/JavaScript-demo.js" target="_blank">js</a>
+            </li>
+            <li class="cell-li">
+                <a class='font-logo blue' href="http://book.jirengu.com/jirengu-inc/jrg-renwu3/homework/%E9%BB%8E%E5%9B%BD%E8%B4%B5/resume/jquery-demo.html" target="_blank">jquery</a>
+            </li>
+            <li class="cell-li">
+                <a class='font-logo green' href="http://book.jirengu.com/jirengu-inc/jrg-renwu3/homework/%E9%BB%8E%E5%9B%BD%E8%B4%B5/resume/other-demo.html" target="_blank">其他</a>
+            </li>
+        </ul>
+    </section>
+</header>
+<main>
+    <section class="hot-resume">
+        <div class="caption clear">
+            <div class="title1">企业页面</div>
+        </div>
+        <ul class="hot-show clear">
+            <li class="hot-show-li">
+                <a href="http://book.jirengu.com/jirengu-inc/jrg-renwu3/homework/%E9%BB%8E%E5%9B%BD%E8%B4%B5/task-15/task15-2/task-15-2.html" target="_blank">
+                    <img src="img/实战三.png" alt="" class="pic1">
+                    <div>企业版页面一</div>
+                </a>
+            </li>
+            <li class="hot-show-li">
+                <a href="http://book.jirengu.com/jirengu-inc/jrg-renwu3/homework/%E9%BB%8E%E5%9B%BD%E8%B4%B5/task-15/task15-1/task-15-1.html" target="_blank">
+                    <img src="img/实战二.png" alt="" class="pic1">
+                    <div>企业版页面二</div>
+                </a>
+            </li>
+            <li class="hot-show-li">
+                <a href="http://book.jirengu.com/jirengu-inc/jrg-renwu3/homework/%E9%BB%8E%E5%9B%BD%E8%B4%B5/task-14/task14.html" target="_blank">
+                    <img src="img/实战一.jpg" alt="" class="pic1">
+                    <div>企业版页面三</div>
+                </a>
+            </li>
+            <li class="hot-show-li">
+                <a href="http://book.jirengu.com/jirengu-inc/jrg-renwu3/homework/%E9%BB%8E%E5%9B%BD%E8%B4%B5/resume/index.html" target="_blank">
+                    <img src="img/太一.jpg" alt="" class="pic1">
+                    <div>另一份线上简历</div>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section class="hot-resume">
+        <div class="caption clear">
+            <div class="title1">页面常见效果</div>
+        </div>
+        <ul class="hot-show clear">
+            <li class="hot-show-li">
+                <a href="http://1.jiuzheyangba.applinzi.com/lgghenfan/perfect/曝光器.html" target="_blank">
+                    <img src="img/lazydown.png" alt="" class="pic1">
+                    <div>懒加载</div>
+                </a>
+            </li>
+            <li class="hot-show-li">
+                <a href="http://book.jirengu.com/jirengu-inc/jrg-renwu3/homework/%E9%BB%8E%E5%9B%BD%E8%B4%B5/perfect/stickup%E6%8F%92%E4%BB%B6.html" target="_blank">
+                    <img src="img/stickup.png" alt="" class="pic1">
+                    <div>stickup</div>
+                </a>
+            </li>
+            <li class="hot-show-li">
+                <a href="http://book.jirengu.com/jirengu-inc/jrg-renwu3/homework/%E9%BB%8E%E5%9B%BD%E8%B4%B5/goTop/%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8%E5%AF%B9%E8%B1%A1%E5%B0%81%E8%A3%85.html" target="_blank">
+                    <img src="img/回到顶部按钮.png" alt="" class="pic1">
+                    <div>回到顶部</div>
+                </a>
+            </li>
+            <li class="hot-show-li">
+                <a href="http://1.jiuzheyangba.applinzi.com/lgghenfan/perfect/新曝光器+瀑布流+ajax生成li.html" target="_blank">
+                    <img src="img/曝光器+瀑布流+JSONP.jpg" alt="" class="pic1">
+                    <div>瀑布流布局</div>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section class="hot-resume">
+        <div class="caption clear">
+            <div class="title1">demo</div>
+        </div>
+        <ul class="hot-show clear">
+            <li class="hot-show-li">
+                <a href="http://book.jirengu.com/jirengu-inc/jrg-renwu3/homework/%E9%BB%8E%E5%9B%BD%E8%B4%B5/perfect/%E6%94%BE%E5%A4%A7%E9%95%9C.html" target="_blank">
+                    <img src="img/淘宝商品放大镜.jpg" alt="" class="pic1">
+                    <div>商品放大镜</div>
+                </a>
+            </li>
+            <li class="hot-show-li">
+                <a href="http://book.jirengu.com/jirengu-inc/jrg-renwu3/homework/%E9%BB%8E%E5%9B%BD%E8%B4%B5/music/index.html" target="_blank">
+                    <img src="img/音乐播放器.png" alt="" class="pic1">
+                    <div>音乐播放器</div>
+                </a>
+            </li>
+            <li class="hot-show-li">
+                <a href="http://book.jirengu.com/jirengu-inc/jrg-renwu3/homework/%E9%BB%8E%E5%9B%BD%E8%B4%B5/task-22/task22-5.html" target="_blank">
+                    <img src="img/模态框.png" alt="" class="pic1">
+                    <div>模态框</div>
+                </a>
+            </li>
+            <li class="hot-show-li">
+                <a href="http://jiuzheyangba.applinzi.com/lgghenfan/kendiedezhongwen/task-15-2.html" target="_blank">
+                    <img src="img/功能模块化单一页面.jpg" alt="" class="pic1">
+                    <div>require页面</div>
+                </a>
+            </li>
+        </ul>
+    </section>
+</main>
+<footer>
+    <section class="end">
+        <ul class="clear">
+            <li><a href="http://book.jirengu.com/jirengu-inc/jrg-renwu3/homework/%E9%BB%8E%E5%9B%BD%E8%B4%B5/bilibili/index.html">电脑版</a></li>
+            <li><a href="#">返回顶部</a></li>
+        </ul>
+    </section>
+</footer>
+<script src="http://book.jirengu.com/jirengu-inc/jrg-renwu3/homework/%E9%BB%8E%E5%9B%BD%E8%B4%B5/bilibili/jquery-2.2.3.min.js"></script>
+<script>
+    function Carousel($node){
+        this.aLong();
+        this.ct = $node.find(".ct") ;
+        this.$children = this.ct.children("li");
+        this.prev = this.ct.siblings(".prev");
+        this.next = this.ct.siblings(".next");
+        this.bullet = this.ct.siblings(".bullet");
+        this.length = this.$children.size();//克隆前图片的数量
+        this.imgWidth = this.ct.children("li").width();
+        this.cur = 0;
+        this.isAnimate =true;//全局变量状态锁，允许执行自动播放的功能
+        this.ct.append(this.$children.first().clone());
+        this.ct.prepend(this.$children.last().clone());
+        this.imgRealCount = this.ct.children().size();//克隆后图片的数量
+        this.ct.css({left:0-this.imgWidth,width:this.imgRealCount*this.imgWidth});
+        this.init();
+    }
+    Carousel.prototype = {
+        aLong:function(){
+            var winWidth = $(window).width();
+            $('.carousel .ct a').css({
+                width: winWidth
+            });
+        },
+        init:function () {
+            var me = this;
+            me.bind();
+            me.autoPlay();
+        },
+        bind : function () {
+            var me = this;
+            $('.carousel .ct li').on('touchstart',function(e){
+                var touch = e.originalEvent.targetTouches[0];
+                $(this).data('startPosition',{x:touch.pageX,y:touch.pageY});
+            });
+            var clock;
+            $('.carousel .ct li').on('touchmove',function(e){
+                var touch = e.originalEvent.targetTouches[0];
+                $(this).data('endPositon',{x:touch.pageX,y:touch.pageY});
+                var deltaX = $(this).data('endPositon').x-$(this).data('startPosition').x;
+                if(deltaX<0) {
+                    clock && clearTimeout(clock);
+                    clock = setTimeout(function(){
+                        e.preventDefault();
+                        me.stopAuto();
+                        me.playNext();
+                        me.autoPlay();
+                        console.log('左');
+                    },100);
+                }
+                else{
+                    clock && clearTimeout(clock);
+                    clock = setTimeout(function(){
+                        e.preventDefault();
+                        me.stopAuto();
+                        me.playPrev();
+                        me.autoPlay();
+                        console.log('右');
+                    },100);
+                }
+            });
+            me.bullet.find("li").on("click",function () {
+                var index = $(this).index();  //找出点击bullet的li元素的编号
+                me.stopAuto();
+                if (index>me.cur){
+                    me.playNext(index-me.cur);
+                }
+                else if(index<me.cur){
+                    me.playPrev(me.cur-index);
+                }
+                me.autoPlay();
+            });
+        },
+        playNext: function (idx) {
+            var me = this;
+            var idx = idx || 1; //移动图片的数量
+            if(me.isAnimate){
+                me.isAnimate = false;
+                me.ct.animate({     //让装载图片的火车，移动
+                    left : "-=" +(me.imgWidth*idx)
+                },function () {
+                    me.cur = (me.cur + idx)%me.length;//改变编号 在四张图片的时候，例如：3+1=0
+                    if(me.cur===0){//如果是第一号 虽然展示的是克隆体，但应该展示第一号，所以
+                        me.ct.css({left:0-me.imgWidth});//瞬间移动为第一个,因为前面有一个克隆的，所以要减去一个imgWidth
+                    }
+                    me.isAnimate = true;
+                    me.setBullet();
+                })
+            }
+        },
+        playPrev: function(idx) {
+            var me = this;
+            var idx = idx || 1; //移动图片数的数量
+            if(me.isAnimate){
+                me.isAnimate = false;
+                me.ct.animate({     //让装载图片的火车，移动
+                    left : "+=" +(me.imgWidth*idx)
+                },function () {
+                    me.cur = (me.length+me.cur-idx)%me.length;//改变编号 在四张图片的时候，例如：0-1=3
+                    if(me.cur===me.length-1){//如果是最后一号 虽然展示的是克隆体，但应该展示最后一号，所以
+                        me.ct.css({left:0-me.imgWidth*me.length});//瞬间移动为最后一个,因为前面有一个克隆的，所以要减去imgWidth*length
+                    }
+                    me.isAnimate = true;
+                    me.setBullet();
+                })
+            }
+        },
+        setBullet:function () {//给相应bullet的li元素加上背景色
+            var me =this;
+            me.bullet.children().removeClass("active").eq(me.cur).addClass("active");
+        },
+        autoPlay:function  (){//自动播放
+            var me = this;
+            me.start = setInterval(function () {
+                me.playNext();
+            },3000)
+        },
+        stopAuto:function () {//停止自动播放功能
+            var me =this;
+            clearInterval(me.start);
+        }
+    };
+    $('.carousel').each(function(){
+        new Carousel($(this));
+    });
+
+
+//    //    判断左滑动还是右滑动
+//    function Judgeslide($slecter){
+//        this.$el =$slecter;
+//        this.bind();
+//
+//    }
+//    Judgeslide.prototype={
+//        bind:function(){
+//            var me = this;
+//            me.$el.on('touchstart',function(e){
+//                var touch = e.originalEvent.targetTouches[0];
+//                $(this).data('startPosition',{x:touch.pageX,y:touch.pageY});
+//            });
+//            var clock;
+//            me.$el.on('touchmove',function(e){
+//                var touch = e.originalEvent.targetTouches[0];
+//                $(this).data('endPositon',{x:touch.pageX,y:touch.pageY});
+//                var deltaX = $(this).data('endPositon').x-$(this).data('startPosition').x;
+//
+//                if(deltaX<0) {
+//                    clock && clearTimeout(clock);
+//                    clock = setTimeout(function(){
+//                        console.log('左')
+//                    },100);
+//                }
+//                else{
+//                    clock && clearTimeout(clock);
+//                    clock = setTimeout(function(){
+//                        console.log('右')
+//                    },100);
+//                }
+//            });
+//        }
+//    };
+//    new Judgeslide($('.carousel .ct li'));
+</script>
+</body>
+</html>
