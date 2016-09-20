@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>仿某公司微网站</title>
+    <link rel="stylesheet" href="css/idangerous.swiper.css">
+    <link rel="stylesheet" href="css/idangerous.swiper.scrollbar.css">
+    <style>
+        html,body,ul,li{
+            margin: 0;
+            padding: 0;
+        }
+        /*logo*/
+        .logo{
+            width: 100%;
+            height:50px;
+            background-color: #004B8D;
+            border-bottom:1px solid #fff;
+        }
+        .logo img{
+            width:100px;
+            height:40px;
+            margin-top: 5px;
+            margin-left:5px;
+        }
+        /*导航栏*/
+        .nav{
+            width:100%;
+            background-color:  #015baa;
+        }
+        .swiper-slide{
+            font-size: 16px;
+            height:40px;
+            line-height:40px;
+            color:#fff;
+            text-align:center;
+            background-color:  #015baa;
+            overflow:hidden;
+            /*background-color: #2574b8;*/
+        }
+        .mian-page{
+            width: 10%;
+        }
+        .news{
+            box-sizing: border-box;
+            border-left:1px solid #2574b8;
+            width: 20%;
+        }
+        .product{
+            box-sizing: border-box;
+            border-left:1px solid #2574b8;
+            width: 25%;
+        }
+        .service{
+            box-sizing: border-box;
+            border-left:1px solid #2574b8;
+            width:25%;
+        }
+        .contact{
+            box-sizing: border-box;
+            border-left:1px solid #2574b8;
+            width: 20%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="img/logo.png"/>
+    </div>
+    <div class="nav">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide mian-page">首页</div>
+            <div class="swiper-slide news">公司新闻</div>
+            <div class="swiper-slide product">产品与相册</div>
+            <div class="swiper-slide service">服务与支持</div>
+            <div class="swiper-slide contact">联系我们</div>
+        </div>
+    </div>
+    <div class="page"></div>
+
+
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/idangerous.swiper-2.0.min.js"></script>
+<script src="js/idangerous.swiper.scrollbar-2.0.js"></script>
+<script>
+    var nav = $('.nav').swiper({
+        slidesPerView: 'auto',
+        freeMode:true,
+//        noSwiping : true,
+//        freeModeFluid:true,
+        calculateHeight : true,
+//        visibilityFullFit: true
+    });
+</script>
+</body>
+</html>

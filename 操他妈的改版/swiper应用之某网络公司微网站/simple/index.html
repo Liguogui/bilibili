@@ -1,0 +1,1109 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1">
+	<title>某互联网公司触屏网站</title>
+
+	<link rel="stylesheet" href="css/idangerous.swiper.css">
+	<link rel="stylesheet" href="css/idangerous.swiper.scrollbar.css">
+		<style>
+    article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/*
+ * Corrects `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+/*
+ * Prevents modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/*
+ * Addresses styling for `hidden` attribute not present in IE 7/8/9, Firefox 3,
+ * and Safari 4.
+ * Known issue: no IE 6 support.
+ */
+
+[hidden] {
+    display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/*
+ * 1. Corrects text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ * 2. Prevents iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    font-size: 100%; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    -ms-text-size-adjust: 100%; /* 2 */
+}
+
+/*
+ * Addresses `font-family` inconsistency between `textarea` and other form
+ * elements.
+ */
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: sans-serif;
+}
+
+/*
+ * Addresses margins handled incorrectly in IE 6/7.
+ */
+
+* {
+    margin: 0;
+	font-size: 14px;
+	list-style:none;
+	padding:0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/*
+ * Addresses `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/*
+ * Improves readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/*
+ * Addresses font sizes and margins set differently in IE 6/7.
+ * Addresses font sizes within `section` and `article` in Firefox 4+, Safari 5,
+ * and Chrome.
+ */
+
+h1 {
+   height: 29px;
+line-height: 29px;
+background: #c8dae9;
+padding-left: 10px;
+border-bottom: 1px solid #9aa8b3;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 0.83em 0;
+}
+
+h3 {
+    font-size: 1.17em;
+    margin: 1em 0;
+}
+
+h4 {
+    font-size: 1em;
+    margin: 1.33em 0;
+}
+
+h5 {
+    font-size: 0.83em;
+    margin: 1.67em 0;
+}
+
+h6 {
+    font-size: 0.67em;
+    margin: 2.33em 0;
+}
+
+/*
+ * Addresses styling not present in IE 7/8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/*
+ * Addresses style set to `bolder` in Firefox 3+, Safari 4/5, and Chrome.
+ */
+
+b,
+strong {
+    font-weight: bold;
+}
+
+blockquote {
+    margin: 1em 40px;
+}
+
+/*
+ * Addresses styling not present in Safari 5 and Chrome.
+ */
+
+dfn {
+    font-style: italic;
+}
+
+/*
+ * Addresses styling not present in IE 6/7/8/9.
+ */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+/*
+ * Addresses margins set differently in IE 6/7.
+ */
+
+
+/*
+ * Corrects font family set oddly in IE 6, Safari 4/5, and Chrome.
+ */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    _font-family: 'courier new', monospace;
+    font-size: 1em;
+}
+
+/*
+ * Improves readability of pre-formatted text in all browsers.
+ */
+
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/*
+ * Addresses CSS quotes not supported in IE 6/7.
+ */
+
+q {
+    quotes: none;
+}
+
+/*
+ * Addresses `quotes` property not supported in Safari 4.
+ */
+
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+/*
+ * Addresses inconsistent and variable font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/*
+ * Prevents `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Lists
+   ========================================================================== */
+
+/*
+ * Addresses margins set differently in IE 6/7.
+ */
+
+
+
+dd {
+    margin: 0 0 0 40px;
+}
+
+/*
+ * Addresses paddings set differently in IE 6/7.
+ */
+
+menu,
+ol,
+ul {
+   
+}
+
+/*
+ * Corrects list images handled incorrectly in IE 7.
+ */
+
+nav ul,
+nav ol {
+    list-style: none;
+    list-style-image: none;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/*
+ * 1. Removes border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 2. Improves image quality when scaled in IE 7.
+ */
+
+img {
+    border: 0; /* 1 */
+    -ms-interpolation-mode: bicubic; /* 2 */
+}
+
+/*
+ * Corrects overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+
+/*
+ * Addresses margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
+ */
+
+figure {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/*
+ * Corrects margin displayed oddly in IE 6/7.
+ */
+
+form {
+    margin: 0;
+}
+
+/*
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/*
+ * 1. Corrects color not being inherited in IE 6/7/8/9.
+ * 2. Corrects text not wrapping in Firefox 3.
+ * 3. Corrects alignment displayed oddly in IE 6/7.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0;
+    white-space: normal; /* 2 */
+    *margin-left: -7px; /* 3 */
+}
+
+/*
+ * 1. Corrects font size not being inherited in all browsers.
+ * 2. Addresses margins set differently in IE 6/7, Firefox 3+, Safari 5,
+ *    and Chrome.
+ * 3. Improves appearance and consistency in all browsers.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%; /* 1 */
+    margin: 0; /* 2 */
+    vertical-align: baseline; /* 3 */
+    *vertical-align: middle; /* 3 */
+}
+
+/*
+ * Addresses Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Corrects inability to style clickable `input` types in iOS.
+ * 3. Improves usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Removes inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+    *overflow: visible;  /* 4 */
+}
+
+/*
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+input[disabled] {
+    cursor: default;
+}
+
+/*
+ * 1. Addresses box sizing set to content-box in IE 8/9.
+ * 2. Removes excess padding in IE 8/9.
+ * 3. Removes excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+    *height: 13px; /* 3 */
+    *width: 13px; /* 3 */
+}
+
+/*
+ * 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/*
+ * Removes inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/*
+ * Removes inner padding and border in Firefox 3+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/*
+ * 1. Removes default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improves readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/*
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+body,html {
+	position: relative;
+	height: 100%;
+}
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	line-height: 1.5;
+	background: #004B8D;
+}
+#main-box{
+	min-width: 320px;
+max-width: 640px;
+background: #fff;
+margin: 0 auto;
+overflow: hidden;
+position: relative;
+}
+#logo{
+	padding:11px 0;
+	background: #004B8D;
+}
+#logo img{
+	display:block;
+	margin-left:10px;
+}
+.swiper-nav {
+	width: 100%;
+	background-color: #015baa;
+	border-top: 1px solid rgba(255,255,255,0.2);
+}
+.swiper-nav .swiper-wrapper {
+	margin:0;
+}
+.swiper-nav span {
+height: 36px;
+line-height: 36px;
+padding: 0 2px;
+display: block;
+color: #fff;
+text-align: center;
+text-shadow: 1px 1px 1px #154166;
+border-left: 1px solid #014c8d;
+padding:0 10px;
+cursor:pointer;
+}
+
+.swiper-nav .swiper-slide:first-child span {
+	border-left: none;
+}
+.swiper-nav .swiper-slide:last-child span {
+	border-right: none;
+}
+.swiper-nav .active span {
+background: #2574b8;
+}
+.swiper-pages {
+	height: 100%;
+}
+.scroll-container {
+	height: 100%;
+	width: 100%;
+}
+.scroll-container .swiper-slide {
+	width: 100%;
+}
+.page-inner {
+	background:#fff;
+}
+input[type="text"], textarea {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background-color: #fff;
+	
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3) inset, 0px 1px 0px rgba(255, 255, 255, 0.2);
+	border:1px solid #ddd;
+	border-radius: 5px;
+	padding: 9px 10px;
+	
+	width: 100%;
+
+}
+input[type="submit"] {
+	border-radius: 5px;
+	display: block;
+	text-align: center;
+	padding: 12px 20px;
+	font-weight: bold;
+	text-decoration: none;
+	border:none;
+	font-size: 16px;
+	cursor: pointer;
+	box-shadow: 0px 0px 1px rgba(255,255,255,.2) inset, 0px 1px 1px rgba(0,0,0,0.3);
+	color: #fff;
+	text-shadow: 0px 1px 0px rgba(0,0,0,1);
+	width: 100%;
+	background-color: #0068c4;
+	
+}
+
+input[type="submit"]:active {
+	background: #111;
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.4) inset;
+}
+#banner img{
+	max-width: 100%;
+	display:block;
+}
+.pagination {
+  position: absolute;
+  z-index: 20;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+.swiper-pagination-switch {
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+  
+  
+  text-indent: -9999em;
+width: 6px;
+height: 6px;
+background-color: rgba(0,0,0,0.5);
+overflow: hidden;
+margin-right: 4px;
+-webkit-box-shadow: 0 0 2px #fff;
+box-shadow: 0 0 2px #fff;
+}
+.swiper-active-switch {
+  background: #000;
+}
+
+.s-title{min-width: 260px;
+height: 19px;
+font-size: 17px;
+line-height: 19px;
+padding: 8px 0;
+text-indent:10px;
+font-weight: bold;
+color: #fff;
+text-shadow: 1px 1px 1px #154166;
+overflow: hidden;
+word-wrap: break-word;
+word-break: break-all;
+background: #2574b8;
+}
+#product-list li {
+	width:100%;
+	float:left;
+	border-bottom:1px solid #ccc;
+	padding:10px 0;
+}
+#product-list li i{
+	width:50px;
+	height:50px;
+	float:left;
+	display:-webkit-box;
+	margin-left:10px;
+	margin-right:10px;
+	background-image:url(img/icon.png);
+	background-size:100px 100px;
+	margin-top:5px;
+}
+#product-list li p{
+	color:#999;
+	max-height: 36px;
+	overflow: hidden;
+display: -webkit-box;
+	text-overflow:ellipsis;
+	line-height:18px;
+}
+#product-list .p1 i{
+	background-position:left top;
+}
+#product-list .p2 i{
+	background-position:right top;
+}
+#product-list .p3 i{
+	background-position:left bottom;
+}
+#product-list .p4 i{
+	background-position:right bottom;
+}
+/* Gallery */
+.swiper-gallery {
+	width: 100%;
+	height: 100%;
+}
+.swiper-gallery .swiper-slide {
+	width: 100%;
+	position: relative;
+	text-align: center;
+}
+.swiper-gallery .swiper-slide img {
+	opacity: 0.2;
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	-webkit-transition: 1000ms;
+	-moz-transition: 1000ms;
+	-ms-transition: 1000ms;
+	-o-transition: 1000ms;
+	transition: 1000ms;
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	-ms-transform: translate3d(0,0,0);
+	-o-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+.swiper-gallery .swiper-slide-visible img {
+	opacity: 1;
+}
+
+/* Scrollbars */
+.swiper-scrollbar {
+	position: absolute;
+	right: 3px;
+	top: 2%;
+	width: 3px;
+	height: 96%;
+	background: rgba(0,0,0,0.4);
+	z-index: 10;
+}
+.swiper-scrollbar-drag {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	background: rgba(255,255,255,0.7);
+	border-radius: 10px;
+}
+.marginb-side{
+	margin:0 15px;
+}
+.NewsListCom li {
+	background-image: url(img/z3g_arrow_black.png);
+	background-repeat: no-repeat;
+	background-position: 100% 50%;
+	border-bottom: 1px solid #ccc;
+	padding: 8px 20px 5px 10px;
+}
+.NewsListCom .imgWrap {
+	margin: 0 auto;
+	background: #f0f0f0 url(m_images/loading.gif) no-repeat 50% 50%;
+	background-size: 20px;
+}
+.NewsListCom .newsTitle {
+	color: #000;
+	vertical-align: middle;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-orient: horizontal;
+	box-orient: horizontal;
+	-webkit-box-align: center;
+	box-align: center;
+	overflow: hidden;
+}
+.NewsListCom .newsTitle img {
+	max-width: 32px;
+	max-height: 16px;
+	margin-left: 2px;
+}
+.NewsListCom strong {
+	line-height: 15px;
+	font-size: 15px;
+}
+.NewsListCom .name {
+	line-height: 16px;
+	font-size: 15px;
+	display: block;
+	overflow: hidden;
+	word-wrap: break-word;
+	word-break: break-all;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+}
+.NewsListCom .time {
+	line-height: 18px;
+	color: #b9b9c8;
+	font-size: 12px;
+}
+.NewsListCom .cont {
+	max-height: 45px;
+	margin: 3px 0 0 0;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	word-wrap: break-word;
+	word-break: break-all;
+	overflow: hidden;
+	color: #b9b9c8;
+	font-size: 12px;
+}
+.NewsListCom .titleCoverStyle li, .NewsListCom.titleCoverStyle li {
+	position: relative;
+	min-height: auto;
+}
+.NewsListCom .titleCoverStyle p, .NewsListCom.titleCoverStyle p {
+	display: none;
+}
+.NewsListCom .titleCoverStyle .newsTitle, .NewsListCom.titleCoverStyle .newsTitle {
+	height: 24px;
+	line-height: 24px;
+	overflow: hidden;
+	background-color: rgba(0,0,0,0.5);
+	position: absolute;
+	bottom: 3px;
+	left: 50%;
+	color: #fff;
+	-webkit-box-pack: center;
+	box-pack: center;
+}
+.NewsListCom .titleCoverStyle .newsTitle, .NewsListCom .titleCoverStyle .name, .NewsListCom.titleCoverStyle .newsTitle, .NewsListCom.titleCoverStyle .name {
+	font-size: 12px;
+	text-align: center;
+}
+.NewsListCom .titleCoverStyle .newsTitle img, .NewsListCom.titleCoverStyle .newsTitle img {
+	display: none;
+}
+.NewsListCom .titleCoverStyle strong, .NewsListCom.titleCoverStyle strong {
+	font-size: 12px;
+}
+.NewsListCom .titleCoverStyle .touch .newsTitle, .NewsListCom.titleCoverStyle .touch .newsTitle {
+	color: #fff!important;
+}
+.NewsListCom li.touch {
+	border-bottom: 1px solid #2573b6;
+	background: #2574b8 url(m_images/z3g_arrow_white.png) no-repeat 100% 50%;
+	-webkit-box-shadow: -2px 5px 5px #1f619a inset;
+	box-shadow: -2px 5px 5px #1f619a inset;
+}
+.NewsListCom .touch .newsTitle, .NewsListCom .touch .time, .NewsListCom .touch .cont {
+	color: #fff;
+	text-shadow: 1px 1px 1px #154166;
+}
+    
+    </style>
+</head>
+<body>
+<div id="main-box">
+<div id="logo"><img src="img/logo.png" width="100" /></div>
+	<div class="swiper-nav swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide active"><span>首 页</span></div>
+			<div class="swiper-slide"><span>公司新闻</span></div>
+			<div class="swiper-slide"><span>产品相册</span></div>
+			<div class="swiper-slide"><span>服务与支持</span></div>
+			<div class="swiper-slide"><span>联系我们</span></div>
+		</div>
+	</div>
+	<div class="swiper-pages swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+            
+				<div class="swiper-container scroll-container swiper-no-swiping">
+					<div class="swiper-scrollbar"></div>
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="page-inner">
+                            
+				<div id="banner" class="swiper-container">
+
+  <div class="swiper-wrapper">
+      <div class="swiper-slide"> <img src="img/banner1.jpg"  class="swiper-no-swiping"></div>
+      <div class="swiper-slide"> <img src="img/banner2.jpg"  class="swiper-no-swiping"></div>
+  </div>
+  <div class="pagination"></div>
+</div>
+<div class="s-title">客户服务</div>
+<div style="padding:10px; height:140px;">
+<img src="img/xingxiang.jpg" width="130" style="float:left; margin-top:3px; margin-right:10px;">
+通过高性能服务器虚拟化为云服务器，提供丰富配置类型虚拟机，您可以方便地进行数据存储、数据库搭建、搭建web服务器等工作，快捷方便
+</div>
+<div class="s-title">推荐产品</div>
+<div id="product-list">
+<ul>
+<li class="p1"><i></i><strong>云服务器</strong><p>专业团队打造资源隔离、数据安全、密码安全、安全加固等多达20种安全防护手段，保证您的数据安全是我们时刻的使命</p></li>
+<li class="p2"><i></i><strong>云数据库</strong><p>专业团队提供7×24小时的专业存储服务支持， 扩容和迁移完全透明 平台提供全方位全天候立体式监控，开发者再也无需半夜去处理</p></li>
+<li class="p3"><i></i><strong>CDN</strong><p>CDN服务的接入完全实现快捷自助化，只需要SVN上传文件，生效CDN文件，即可通过url访问CDN文件</p></li>
+<li class="p4"><i></i><strong>云安全</strong><p>获BSI权威认证，是国内云计算领域首家获ISO 27001:2013新版认证的企业，专业品质，为您保驾护航。</p></li>
+</ul>
+</div>
+
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+                
+                
+                
+			</div>
+			<div class="swiper-slide">
+				<div class="swiper-container scroll-container">
+					<div class="swiper-scrollbar"></div>
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="page-inner">
+								<h1>公司新闻</h1>
+								<ul id="infoNew_List" class="NewsListCom NewsList-d1_c1">
+					<li class="active js_gotoNewsDetail" data-id="146">
+						<div class="newsTitle">
+							<span class="name">
+								团结一致向前看 继往开来创新篇
+							</span>
+						</div>
+							<p class="time">
+								2017-03-13
+							</p>
+					</li>
+					<li class="active js_gotoNewsDetail" data-id="145">
+						<div class="newsTitle">
+							<span class="name">
+								抓住机遇用全网营销带领企业成功转型
+							</span>
+						</div>
+							<p class="time">
+								2017-03-13
+							</p>
+					</li>
+					<li class="active js_gotoNewsDetail" data-id="144">
+						<div class="newsTitle">
+							<span class="name">
+								本公司20周年庆 火热促销进行中
+							</span>
+						</div>
+							<p class="time">
+								2017-09-16
+							</p>
+					</li>
+					<li class="active js_gotoNewsDetail" data-id="143">
+						<div class="newsTitle">
+							<span class="name">
+								抢夺移动互联客户 中小企业APP网站可速成
+							</span>
+						</div>
+							<p class="time">
+								2017-06-08
+							</p>
+					</li>
+					<li class="active js_gotoNewsDetail" data-id="142">
+						<div class="newsTitle">
+							<span class="name">
+								中小企业：如何打好移动互联的关键战役
+							</span>
+						</div>
+							<p class="time">
+								2017-05-28
+							</p>
+					</li>
+					<li class="active js_gotoNewsDetail" data-id="141">
+						<div class="newsTitle">
+							<span class="name">
+								4G时代将临中小企业智破移动营销障碍
+							</span>
+						</div>
+							<p class="time">
+								2017-05-28
+							</p>
+					</li>
+		</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="swiper-container swiper-gallery">
+					<div class="swiper-scrollbar"></div>
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="img/gallery-2.jpg" height="684" width="1024" alt=""></div>
+						<div class="swiper-slide"><img src="img/gallery-3.jpg" height="800" width="532" alt=""></div>
+						<div class="swiper-slide"><img src="img/gallery-4.jpg" height="800" width="532" alt=""></div>
+						<div class="swiper-slide"><img src="img/gallery-5.jpg" height="684" width="1024" alt=""></div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="swiper-container scroll-container">
+					<div class="swiper-scrollbar"></div>
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="page-inner">
+								<h1>服务与支持</h1>
+                                <div class="marginb-side">
+								<h3>全国服务网络</h3>
+								<p>我们的服务网络遍布全国80余个城市，信息化专家5000多位，为企业提供本地化一对一的信息化咨询及产品应用专家级服务。</p>
+								<p>点击下图查看我们的分公司：</p>
+							
+								<p><img src="img/map.jpg"></p>
+                                </div>
+                                
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="swiper-container scroll-container">
+					<div class="swiper-scrollbar"></div>
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="page-inner">
+								<h1>联系我们</h1>
+                                <div class="marginb-side">
+                               <br>
+								<p style="margin-bottom:1em;">填写提交后我们会尽快回复:</p>
+								<form action="">
+									<p style="margin-bottom:1em;"><input type="text" name="first" placeholder="姓名" id=""></p>	
+									<p style="margin-bottom:1em;"><input type="text" name="last" placeholder="电话" id=""></p>	
+									<p style="margin-bottom:1em;"><input type="text" name="subject" placeholder="感兴趣的产品" id=""></p>	
+									<p style="margin-bottom:1em;"><textarea name="message" placeholder="详细描述" cols="30" rows="10"></textarea></p>
+									<p style="margin-bottom:1em;"><input type="submit" value="提交"></p>
+								</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<script src="js/jquery.min.js"></script>
+	<!-- Don't forget to get the latest Swiper and scrollbar version here-->
+	<script src="js/idangerous.swiper-2.0.min.js"></script>
+	<script src="js/idangerous.swiper.scrollbar-2.0.js"></script>
+	<script>
+    $(function(){
+
+	//Init Navigation
+	var nav = $('.swiper-nav').swiper({
+		slidesPerView: 'auto',
+		freeMode:true,
+		noSwiping : true,
+		freeModeFluid:true,
+		calculateHeight : true,
+		visibilityFullFit: true,
+		onSlideClick: function(nav){
+			pages.swipeTo( nav.clickedSlideIndex )
+		}
+	})
+
+	//Function to Fix Pages Height
+	function fixPagesHeight() {
+		$('.swiper-pages').css({
+			height: $(window).height()-nav.height-48
+		})
+	}
+	$(window).on('resize',function(){
+		fixPagesHeight()
+	})
+	fixPagesHeight()
+
+	//Init Pages
+	var pages = $('.swiper-pages').swiper({
+		noSwiping : true,
+	onSlideChangeStart: function(){
+        $(".swiper-nav .active").removeClass('active')
+        $(".swiper-nav .swiper-slide").eq(pages.activeIndex).addClass('active')  
+    },
+	})
+
+ var mySwiper = new Swiper('#banner',{
+ loop:true,
+	autoplay:5000,
+	calculateHeight : true,
+	pagination : '.pagination',
+	
+    //其他设置
+  });  
+
+	//Scroll Containers
+	$('.scroll-container').each(function(){
+		$(this).swiper({
+		
+			mode:'vertical',
+			scrollContainer: true,
+			mousewheelControl: true,
+			scrollbar: {
+				container:$(this).find('.swiper-scrollbar')[0]
+			}
+		})
+	})
+
+	//Gallery
+	var swiperGallery = $('.swiper-gallery').swiper({
+		mode: 'vertical',
+		slidesPerView: 'auto',
+		freeMode: true,
+		freeModeFluid: true,
+		scrollbar: {
+			container:$('.swiper-gallery .swiper-scrollbar')[0]
+		}
+	})
+	
+	swiperGallery.reInit()
+
+})
+    </script>
+</body>
+</html>

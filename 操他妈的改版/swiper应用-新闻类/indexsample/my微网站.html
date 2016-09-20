@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>仿某公司微网站</title>
+    <link rel="stylesheet" href="swiper-3.3.1.min.css">
+    <style>
+        html,body,ul,li{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        li{
+            list-style: none;
+        }
+        .clearfix:after{
+            content: '';
+            display: block;
+            clear:both;
+        }
+        @font-face {
+            font-family: 'iconfont';
+            src: url('//at.alicdn.com/t/font_1471683336_6377048.eot'); /* IE9*/
+            src: url('//at.alicdn.com/t/font_1471683336_6377048.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('//at.alicdn.com/t/font_1471683336_6377048.woff') format('woff'), /* chrome、firefox */
+            url('//at.alicdn.com/t/font_1471683336_6377048.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+            url('//at.alicdn.com/t/font_1471683336_6377048.svg#iconfont') format('svg'); /* iOS 4.1- */
+        }
+
+        .iconfont {
+            font-family:'iconfont';
+            font-style:normal;
+            font-size: 50px;
+        }
+        /*logo*/
+        .logo{
+            width: 100%;
+            height:50px;
+            background-color: #004B8D;
+            border-bottom:1px solid #fff;
+        }
+        .logo img{
+            width:100px;
+            height:40px;
+            margin-top: 5px;
+            margin-left:5px;
+        }
+        /*导航栏*/
+        .nav{
+            width:100%;
+            background-color:  #015baa;
+        }
+        .nav .swiper-slide{
+            font-size: 16px;
+            height:40px;
+            line-height:40px;
+            color:#fff;
+            text-align:center;
+            background-color:  #015baa;
+            /*overflow:hidden是必须要有的*/
+            overflow:hidden;
+
+        }
+        .nav .active{
+            background-color: #2574b8;
+        }
+        .nav .main-page{
+            width: 10%;
+        }
+        .nav .news{
+            box-sizing: border-box;
+            border-left:1px solid #2574b8;
+            width: 20%;
+        }
+        .nav .product{
+            box-sizing: border-box;
+            border-left:1px solid #2574b8;
+            width: 25%;
+        }
+        .nav .service{
+            box-sizing: border-box;
+            border-left:1px solid #2574b8;
+            width:25%;
+        }
+        .nav .contact{
+            box-sizing: border-box;
+            border-left:1px solid #2574b8;
+            width: 20%;
+        }
+        /*主页面*/
+        .page{
+            /*高度都由包裹的元素加上*/
+            height:auto;
+            /*必须加上overflow*/
+            overflow:hidden;
+            /*最好加上relative*/
+            position:relative;
+        }
+        .page .swiper-slide{
+            width:100%;
+        }
+        /*首页面*/
+        .page .carousel{
+            height:380px;
+            /*必须加上overflow*/
+            overflow:hidden;
+            /*不加relative的话，分页器位置会出错*/
+            position:relative;
+        }
+        .page .carousel img{
+            width:100%;
+            height:100%;
+        }
+        /*客户服务*/
+        .main-page .customer-service{
+            height:40px;
+            line-height: 45px;
+            padding-top: 3px;
+            padding-left:5px;
+            font-size: 20px;
+            color:#fff;
+            background-color: #015baa;
+        }
+        .main-page .customer-service-show .img-logo{
+            float: left;
+            width:40%;
+            box-sizing: border-box;
+            padding-top:15px;
+            padding-left:10px;
+        }
+        .main-page .customer-service-show .img-logo img{
+            width:100%;
+            height:100%;
+        }
+        .main-page .customer-service-show .service-description{
+            float:right;
+            width:60%;
+            box-sizing: border-box;
+            padding-top:15px;
+            padding-left:10px;
+        }
+        /*推荐产品*/
+        .main-page .recommend-product{
+            height:40px;
+            line-height: 45px;
+            padding-top: 3px;
+            padding-left:5px;
+            margin-top:10px;
+            font-size: 20px;
+            color:#fff;
+            background-color: #015baa;
+        }
+        .main-page .recommend-product-show{
+            margin-bottom:5px;
+        }
+        .main-page .recommend-product-show .img-logo{
+            float: left;
+            width:20%;
+            box-sizing: border-box;
+            text-align:center;
+            padding-top:5px;
+            padding-left:10px;
+        }
+        .main-page .recommend-product-show .recommend-description{
+            float:right;
+            width:80%;
+            box-sizing: border-box;
+            padding-top:5px;
+            padding-left:10px;
+        }
+        /*第二个页面*/
+        /*公司新闻页面*/
+        .company-news{
+            width: 100%;
+            height:30px;
+            line-height: 30px;
+            text-indent: 10px;
+            background-color: #c8dae9;
+            border-bottom: 1px solid #9aa8b3;
+        }
+        .news-list>li{
+            height:50px;
+            padding-top: 10px;
+            padding-left:10px;
+            border-bottom: 1px solid #b9b9c8;
+        }
+        .news-list>li .news-content{
+            font-weight: normal;
+        }
+        .news-list>li .news-times{
+            color:#b9b9c8;
+        }
+        /*第三个页面*/
+        /*产品相册*/
+        .product img{
+            width:100%;
+            height:250px;
+        }
+        /*第四个页面*/
+        /*服务与支持*/
+        .service-title{
+            width: 100%;
+            height:30px;
+            line-height: 30px;
+            text-indent: 10px;
+            background-color: #c8dae9;
+            border-bottom: 1px solid #9aa8b3;
+        }
+        .service-network{
+            margin-left: 25px;
+        }
+        /*第五个页面*/
+        /*联系我们*/
+        .contact-title{
+            width: 100%;
+            height:30px;
+            line-height: 30px;
+            text-indent: 10px;
+            background-color: #c8dae9;
+            border-bottom: 1px solid #9aa8b3;
+        }
+        .contact-form{
+            margin-left: 25px;
+        }
+        .contact-form div{
+            margin-bottom: 20px;
+        }
+        .contact-form input{
+            width:100%;
+            height:36px;
+            padding:5px;
+            border-radius: 10px;
+            border:1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3) inset, 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+        .contact-form input[type='submit']{
+            height: 45px;
+            font-size: 20px;
+            background-color: #0068c4;
+            color:#fff;
+        }
+        .contact-form textarea{
+            width:100%;
+            padding:5px;
+            border-radius: 10px;
+            border:1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3) inset, 0 1px 0 rgba(255, 255, 255, 0.2);
+            margin-bottom:20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="img/logo.png"/>
+    </div>
+    <div class="nav">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide main-page active">首页</div>
+            <div class="swiper-slide news">公司新闻</div>
+            <div class="swiper-slide product">产品与相册</div>
+            <div class="swiper-slide service">服务与支持</div>
+            <div class="swiper-slide contact">联系我们</div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide main-page">
+                <div class="slide">
+                            <!--轮播图-->
+                    <div class="carousel">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="img/banner1.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="img/banner2.jpg" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="customer-service">客户服务</div>
+                    <div class="customer-service-show clearfix">
+                        <div class="img-logo"><img src="img/xingxiang.jpg" alt=""></div>
+                        <div class="service-description">
+                            通过高性能服务器虚拟化为云服务器，提供丰富配置类型虚拟机，您可以方便地进行数据存储、数据库搭建、搭建web服务器等工作，快捷方便
+                        </div>
+                    </div>
+                    <div class="recommend-product">推荐产品</div>
+                    <div class="recommend-product-show clearfix">
+                        <div class="img-logo"><span class="iconfont">&#xe600</span></div>
+                        <div class="recommend-description">
+                            <strong>云服务器</strong>
+                            <div>专业团队打造资源隔离、数据安全、密码安全、安全加固等多达20种安全防护手段，保证您的数据安全是我们时刻的使命</div>
+                        </div>
+                    </div>
+                    <div class="recommend-product-show clearfix">
+                        <div class="img-logo"><span class="iconfont">&#xe601</span></div>
+                        <div class="recommend-description">
+                            <strong>云数据库</strong>
+                            <div>专业团队提供7×24小时的专业存储服务支持， 扩容和迁移完全透明 平台提供全方位全天候立体式监控，开发者再也无需半夜去处理</div>
+                        </div>
+                    </div>
+                    <div class="recommend-product-show clearfix">
+                        <div class="img-logo"><span class="iconfont">&#xe602</span></div>
+                        <div class="recommend-description">
+                            <strong>CDN</strong>
+                            <div>CDN服务的接入完全实现快捷自助化，只需要SVN上传文件，生效CDN文件，即可通过url访问CDN文件</div>
+                        </div>
+                    </div>
+                    <div class="recommend-product-show clearfix">
+                        <div class="img-logo"><span class="iconfont">&#xe603</span></div>
+                        <div class="recommend-description">
+                            <strong>云安全</strong>
+                            <div>获BSI权威认证，是国内云计算领域首家获ISO 27001:2013新版认证的企业，专业品质，为您保驾护航。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide news">
+                <div class="company-news">公司新闻</div>
+                <ul class="news-list">
+                    <li>
+                        <div class="news-content">团结一致向前看 继往开来创新篇</div>
+                        <div class="news-times">2016-03-07</div>
+                    </li>
+                    <li>
+                        <div class="news-content">抓住机遇用全网营销带领企业成功转型</div>
+                        <div class="news-times">2016-03-07</div>
+                    </li>
+                    <li>
+                        <div class="news-content">本公司20周年庆 火热促销进行中</div>
+                        <div class="news-times">2016-03-07</div>
+                    </li>
+                    <li>
+                        <div class="news-content">抢夺移动互联客户 中小企业APP网站可速成</div>
+                        <div class="news-times">2016-03-07</div>
+                    </li>
+                    <li>
+                        <div class="news-content">中小企业：如何打好移动互联的关键战役</div>
+                        <div class="news-times">2016-03-07</div>
+                    </li>
+                    <li>
+                        <div class="news-content">4G时代将临中小企业智破移动营销障碍</div>
+                        <div class="news-times">2016-03-07</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="swiper-slide product">
+                <img src="img/gallery-2.jpg" alt="">
+                <img src="img/gallery-3.jpg" alt="">
+                <img src="img/gallery-4.jpg" alt="">
+                <img src="img/gallery-5.jpg" alt="">
+            </div>
+            <div class="swiper-slide service">
+                <div class="service-title">服务与支持</div>
+                <div class="service-network">
+                    <h4>全国服务网络</h4>
+                    <p>我们的服务网络遍布全国80余个城市，信息化专家5000多位，为企业提供本地化一对一的信息化咨询及产品应用专家级服务。</p>
+                    <p>点击下图查看我们的分公司：</p>
+                    <img src="img/map.jpg" alt="">
+                </div>
+            </div>
+            <div class="swiper-slide contact">
+                <div class="contact-title">服务与支持</div>
+                <div class="contact-form">
+                    <p>填写提交后我们会尽快回复</p>
+                    <form action="#" method='post'>
+                        <div>
+                            <input type="text" name="username" placeholder="姓名">
+                        </div>
+                        <div><input type="text" name="tel" placeholder="电话"></div>
+                        <div><input type="text" name="intersting" placeholder="感兴趣的产品"></div>
+                        <textarea name="description" id="" cols="30" rows="10" placeholder="详细描述"></textarea>
+                        <input type="submit" value="提交">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="swiper-3.3.1.min.js"></script>
+    <script src="js/jquery-1.10.1.min.js"></script>
+<script>
+    var nav = new Swiper('.nav',{
+        slidesPerView: 'auto'
+    });
+    var page = new Swiper('.page',{
+        onSlideChangeStart: function(){
+            $('.nav .swiper-slide').removeClass('active');
+            //  page.activeIndex 返回当前活动块的索引。loop模式下注意该值会被加上复制的slide数。
+            $('.nav .swiper-slide').eq(page.activeIndex).addClass('active');
+        }
+    });
+    var carousel = new Swiper('.carousel',{
+        loop:true,
+        pagination: '.swiper-pagination',
+        autoplay:4000
+    });
+//    体验很差
+//    var mainPageSwiper = new Swiper('.main-page-swiper',{
+//        direction:'vertical'
+//    });
+    $('.nav .swiper-slide').on('click',function(){
+        $('.tabs a').removeClass('active');
+        $(this).addClass('active');
+        page.slideTo($(this).index());
+    });
+</script>
+</body>
+</html>

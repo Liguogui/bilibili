@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        html,body,ul,li{
+            margin: 0;
+            padding:0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        a{
+            text-decoration: none;
+        }
+        li{
+            list-style: none;
+        }
+        /*头部导航条*/
+        header{
+            height:100%;
+            width:100%;
+            background: linear-gradient(150deg,#d4c7c0,#8db0b0);
+        }
+        .nav-fixed{
+            position:fixed;
+            top:0;
+            z-index: 100;
+            width:100%;
+        }
+        .nav-fixed:hover{
+            background-color: rgba(225,225,225,0.5);
+        }
+        /*左*/
+        .logo{
+            font-size:18px;
+        }
+        .logo img{
+            height:30px;
+            width:auto;
+        }
+        /*右*/
+        .nav-item{
+            font-size: 13px;
+            height:30px;
+            line-height: 30px;
+            font-weight: 400;
+            margin: 10px 10px;
+        }
+        .nav-item a{
+            color:#000;
+        }
+        .nav-item a:hover{
+            color:orange;
+        }
+        /*导航条媒体查询*/
+        @media screen and (max-width: 767px){
+            .navbar-left{
+                text-align: center;
+                margin-top:5px;
+                margin-bottom: 5px;
+            }
+            .navbar-nav>li{
+                float:left;
+                width:15%;
+                text-align: center;
+            }
+            .navbar-nav{
+                margin:0 auto;
+            }
+
+        }
+        @media screen and (max-width:660px) {
+
+        }
+        /*首页*/
+        .promo{
+            height:100%;
+            width:100%;
+            text-align: center;
+
+        }
+        .promo .container{
+            height:100%;
+            width:100%;
+            position:relative;
+        }
+        .promo .wrap{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+        .title img{
+            height:200px;
+            width:auto;
+        }
+        .title span{
+            color:#fff;
+            font-size:38px;
+        }
+        .btn-wrapper{
+            margin-top: 50px;
+        }
+        .btn-wrapper .btn{
+            width:150px;
+            height:50px;
+            font-size: 25px;
+            color:#fff;
+            border:1px solid #fff;
+        }
+        .btn-wrapper .btn:hover{
+            background-color: #fff;
+            color:#000;
+        }
+        /*内容一我们可以做什么*/
+        .what-we-do{
+            min-height:710px;
+        }
+        .what-we-do .title{
+            margin-top:100px;
+            color: gray
+        }
+        .what-we-do .services{
+            margin-top: 50px
+        }
+        .what-we-do .services h3{
+            color:grey
+        }
+        .what-we-do .services h4{
+            color: darkgrey
+        }
+        .what-we-do .services .img-wrap img{
+            width: 250px;
+            margin-top: 20px;
+            box-shadow:  0 5px 20px #8db0b0
+        }
+        .what-we-do .services .img-wrap .first-img{
+            position: absolute;
+            left: 0;
+            top:0;
+        }
+        .what-we-do .services .img-wrap .second-img{
+            position: absolute;
+            left: 200px;
+            top:50px
+        }
+        .what-we-do .services .img-wrap .third-img{
+            position: absolute;
+            left: 400px;
+            top:0
+        }
+        @media screen and (max-width: 991px) {
+            .what-we-do{
+                min-height:950px;
+            }
+        }
+        /*内容二我们可以做什么*/
+        .what-we-do2{
+            color:#fff;
+            background: linear-gradient(30deg,#d4c7c0,#8db0b0);
+            min-height:710px;
+        }
+        .what-we-do2 .title{
+            margin-top:100px;
+        }
+        .what-we-do2 .services{
+            margin-top: 50px
+        }
+        .what-we-do2 .services h3{
+            color:#fff;
+        }
+        .what-we-do2 .services h4{
+            color: #fff;
+        }
+        .what-we-do2 .services .img-wrap img{
+            width: 250px;
+            margin-top: 20px;
+            box-shadow:  0 5px 20px #8db0b0
+        }
+        .what-we-do2 .services .img-wrap .first-img{
+            position: absolute;
+            left:80px;
+            top:0;
+        }
+        .what-we-do2 .services .img-wrap .second-img{
+            position: absolute;
+            left: 360px;
+            top:0;
+        }
+        .what-we-do2 .services .text2{
+            margin-top: 150px;
+        }
+        @media screen and (max-width: 991px) {
+            .what-we-do2{
+                min-height:950px;
+            }
+            .what-we-do2 .services .text2{
+                margin-top: 0;
+            }
+            .what-we-do2 .services .img-wrap .first-img{
+                position: absolute;
+                top:160px;
+            }
+            .what-we-do2 .services .img-wrap .second-img{
+                position: absolute;
+                top:160px;
+            }
+        }
+        /*二维码*/
+        .form-group img{
+            height: 200px;
+            width: 200px;
+        }
+        /*图片消失媒体查询*/
+        @media screen and (max-width:660px) {
+            .img-wrap{
+                display: none;
+            }
+            .what-we-do{
+                min-height:550px;
+            }
+            .what-we-do2{
+                min-height:450px;
+            }
+        }
+        /*footer*/
+        footer{
+            color:#fff;
+            margin-top: 100px;
+            background-color:#8db0b0;
+        }
+        footer a{
+            color:#fff;
+            font-size: 20px;
+        }
+        footer .row{
+            margin-top:25px;
+        }
+        footer .beian{
+            width:300px;
+            margin:0 auto;
+            padding:20px 0;
+        }
+        footer .beian a{
+            display:inline-block;
+            height:20px;
+            line-height:20px;
+        }
+        footer .beian img{
+            float:left;
+        }
+        footer .beian p{
+            float:right;
+            font-size: 12px;
+            margin-left:5px;
+            color:gainsboro;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-fixed">
+            <div class="container">
+                <h1 class="navbar-left logo">
+                    <a href="#">
+                        <img class="logo-image" src="img/bannerlogo.png" alt="六度盒子">
+                        <span class="logo-title">六度盒子</span>
+                    </a>
+                </h1>
+                <nav class="navbar-right">
+                    <ul class="navbar-nav row">
+                        <li class="nav-item"><a href="#">首页</a></li>
+                        <li class="nav-item"><a href="#">产品介绍</a></li>
+                        <li class="nav-item"><a href="#">上传项目</a></li>
+                        <li class="nav-item"><a href="#">登陆/注册</a></li>
+                        <li class="nav-item"><a href="#">退出</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <section class="promo">
+            <div class="container">
+                <div class="wrap">
+                    <h2 class="title">
+                        <img src="img/logo.png" alt="六度盒子"><br>
+                        <span class="sub">专注，发现投资的更多可能性。</span>
+                    </h2>
+                    <div class="btn-wrapper">
+                        <a class="btn btn-cta btn-cta-secondary btn-scrollto" href="#">下载</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <main>
+        <section class="what-we-do">
+            <div class="container text-center">
+                <h2 class="title">投资沟通，纯粹高效</h2>
+                <div class="services row">
+                    <div class="col-md-4">
+                        <h3>快速获取项目概况</h3>
+                        <h4>结构化呈现，要点清晰</h4>
+                        <h3>迅速了解沟通目的</h3>
+                        <h4>一键发起项目合投、转让、讨论</h4>
+                        <h3>任务协同重点提示</h3>
+                        <h4>沉淀归档，不再遗漏任何重要信息</h4>
+                    </div>
+                    <div class="col-md-8 img-wrap">
+                        <div class="col-md-4 first-img"><img src="img/secret.png"alt="APP图片"></div>
+                        <div class="col-md-4 second-img"><img src="img/jiegouhua.png"alt="APP图片"></div>
+                        <div class="col-md-4 third-img"><img src="img/xiangmuhetou.png"alt="APP图片"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section  class="what-we-do2 section">
+            <div class="container text-center" >
+                <h2 class="title">工作链接，更多可能</h2>
+                <div class="services row">
+                    <div class="col-md-8 col-sm-12 img-wrap" id="img">
+                        <div class="col-md-4 col-sm-6 first-img" style=""><img src="img/xiangmuguangchang.png"alt="APP图片"></div>
+                        <div class="col-md-4 col-sm-6 second-img" style=""><img src="img/zatanguanshui.png"alt="APP图片"></div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 text2">
+                        <h3>项目广场</h3><h4>项目共享，寻找潜力股，助力项目成长</h4>
+                        <h3>六度杂谈</h3><h4>观点碰撞，发现对的人，合作创造价值</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contact">
+            <div class="container text-center">
+                <div class="container text-center">
+                    <h2 class="title ">下载</h2>
+                    <div class="row text-center">
+                        <div class="col-md-12 form-group">
+                            <img src="img/1466131392.png" alt="android二维码">
+                            <br>
+                            Android下载
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4"><a href="#">关于我们</a></div>
+                <div class="col-md-4"><a href="#">加入我们</a></div>
+                <div class="col-md-4"><a href="#">联系我们</a></div>
+            </div>
+            <h4>
+                六度盒子&copy; 2016 杭州钒融科技有限公司<br>
+                浙ICP备16004935号-2
+            </h4>
+            <div class="beian">
+                <a target="_blank" href=" ">
+                    <img src="img/ga.png">
+                    <p>浙公网安备 33010602005242号</p >
+                </a >
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

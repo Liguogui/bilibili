@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>练习一</title>
+    <link rel="stylesheet" href="ionic/css/ionic.min.css">
+    <style>
+        .col{
+            background-color: #F9FAFB;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 2px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body ng-controller="myController">
+
+    <!--<div class="bar bar-header item-input-inset">-->
+        <!--<label class="item-input-wrapper">-->
+            <!--<i class="icon ion-ios-search placeholder-icon"></i>-->
+            <!--<input type="search" placeholder="搜索">-->
+        <!--</label>-->
+        <!--<button class="button button-clear">-->
+            <!--取消-->
+        <!--</button>-->
+    <!--</div>-->
+
+
+    <div class="bar bar-header">
+        <h1 class="title">bilibili</h1>
+    </div>
+
+    <!--<div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">-->
+        <!--<div class="tabs tabs-icon-left">-->
+            <!--<a class="tab-item" href="#">-->
+                <!--<i class="icon ion-home"></i>-->
+                <!--测试-->
+            <!--</a>-->
+            <!--<a class="tab-item" href="#">-->
+                <!--<i class="icon ion-star"></i>-->
+                <!--收藏-->
+            <!--</a>-->
+            <!--<a class="tab-item active" href="#">-->
+                <!--<i class="icon ion-gear-a"></i>-->
+                <!--设置-->
+            <!--</a>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <div class="content has-header ionic-pseudo">
+        <!--<div class="list">-->
+            <!--<div class="item item-divider">1</div>-->
+            <!--<div class="item item-icon-left"><i class="icon ion-email"></i>2</div>-->
+            <!--<div class="item item-icon-right"><i class="icon ion-music-note"></i>3 <span class="item-note">OK</span></div>-->
+            <!--<div class="item item-button-right">-->
+                <!--call me-->
+                <!--<button class="button button-balanced"><i class="icon ion-ios-telephone"></i></button>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;带头像列表&ndash;&gt;-->
+            <!--<a href="" class="item item-avatar">-->
+                <!--<img src="http://www.runoob.com/try/demo_source/spengler.jpg">-->
+                <!--<h2>Egon</h2>-->
+                <!--<p>We're gonna go full stream.</p>-->
+            <!--</a>-->
+            <!--&lt;!&ndash;缩略图列表&ndash;&gt;-->
+            <!--<a class="item item-thumbnail-left" href="#">-->
+                <!--<img src="http://www.runoob.com/try/demo_source/dookie.jpg">-->
+                <!--<h2>Smashing Pumpkins</h2>-->
+                <!--<p>Siamese Dream</p>-->
+            <!--</a>-->
+            <!--&lt;!&ndash;缩略图列表&ndash;&gt;-->
+            <!--<a class="item item-thumbnail-right" href="#">-->
+                <!--<img src="http://www.runoob.com/try/demo_source/dookie.jpg">-->
+                <!--<h2>Smashing Pumpkins</h2>-->
+                <!--<p>Siamese Dream</p>-->
+            <!--</a>-->
+            <!--<div class="item">7</div>-->
+        <!--</div>-->
+
+        <!--<div class="card">-->
+            <!--<div class="item item-divider">-->
+                <!--卡片头部！-->
+            <!--</div>-->
+            <!--<div class="item item-text-wrap">-->
+                <!--基本卡片，包含了文本信息。-->
+            <!--</div>-->
+            <!--<div class="item item-divider">-->
+                <!--卡片底部！-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="list card">-->
+            <!--<a href="#" class="item item-icon-left">-->
+                <!--<i class="icon ion-home"></i>-->
+                <!--Enter home address-->
+            <!--</a>-->
+            <!--<a href="#" class="item item-icon-left">-->
+                <!--<i class="icon ion-ios-telephone"></i>-->
+                <!--Enter phone number-->
+            <!--</a>-->
+            <!--<a href="#" class="item item-icon-left">-->
+                <!--<i class="icon ion-wifi"></i>-->
+                <!--Enter wireless password-->
+            <!--</a>-->
+            <!--<a href="#" class="item item-icon-left">-->
+                <!--<i class="icon ion-card"></i>-->
+                <!--Enter card information-->
+            <!--</a>-->
+        <!--</div>-->
+
+
+        <!--<div class="list card">-->
+            <!--<div class="item item-avatar">-->
+                <!--<img src="http://www.runoob.com/try/demo_source/nin_logo.jpeg">-->
+                <!--<h2>Pretty Hate Machine</h2>-->
+                <!--<p>Nine Inch Nails</p>-->
+            <!--</div>-->
+
+            <!--<div class="item item-image">-->
+                <!--<img src="http://www.runoob.com/try/demo_source/41D5vU4I1NL.jpg">-->
+            <!--</div>-->
+
+            <!--<a class="item item-icon-left" href="#">-->
+                <!--<i class="icon ion-music-note"></i>-->
+                <!--Start listening-->
+            <!--</a>-->
+        <!--</div>-->
+
+
+        <!--<div class="list card">-->
+            <!--<div class="item item-avatar">-->
+                <!--<img src="http://www.runoob.com/try/demo_source/mcfly.jpg">-->
+                <!--<h2>Marty McFly</h2>-->
+                <!--<p>November 05, 1955</p>-->
+            <!--</div>-->
+
+            <!--<div class="item item-body">-->
+                <!--&lt;!&ndash;<img class="full-image"  src="http://www.runoob.com/try/demo_source/delorean.jpg">&ndash;&gt;-->
+                <!--<p>-->
+                    <!--菜鸟教程 &#45;&#45; 学的不仅是技术，更是梦想！<br>-->
+                    <!--菜鸟教程 &#45;&#45; 学的不仅是技术，更是梦想！<br>-->
+                    <!--菜鸟教程 &#45;&#45; 学的不仅是技术，更是梦想！<br>-->
+                    <!--菜鸟教程 &#45;&#45; 学的不仅是技术，更是梦想！-->
+                <!--</p>-->
+                <!--<p>-->
+                    <!--<a href="#" class="subdued">1 喜欢</a>-->
+                    <!--<a href="#" class="subdued">5 评论</a>-->
+                <!--</p>-->
+            <!--</div>-->
+
+            <!--<div class="item tabs tabs-secondary tabs-icon-left">-->
+                <!--<a class="tab-item" href="#">-->
+                    <!--<i class="icon ion-thumbsup"></i>-->
+                    <!--喜欢-->
+                <!--</a>-->
+                <!--<a class="tab-item" href="#">-->
+                    <!--<i class="icon ion-chatbox"></i>-->
+                    <!--评论-->
+                <!--</a>-->
+                <!--<a class="tab-item" href="#">-->
+                    <!--<i class="icon ion-share"></i>-->
+                    <!--分享-->
+                <!--</a>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="list list-inset">-->
+            <!--<label class="item item-input">-->
+                <!--<input type="text" placeholder="First Name">-->
+            <!--</label>-->
+            <!--<label class="item item-input">-->
+                <!--<input type="text" placeholder="Last Name">-->
+            <!--</label>-->
+            <!--<label class="item item-input">-->
+                <!--<textarea placeholder="Comments"></textarea>-->
+            <!--</label>-->
+        <!--</div>-->
+        <!--<div class="padding">-->
+            <!--<button class="button button-block button-positive">Submit</button>-->
+        <!--</div>-->
+
+        <!--<div class="list list-inset">-->
+            <!--<label class="item item-input">-->
+                <!--<span class="input-label">用户名：</span>-->
+                <!--<input type="text">-->
+            <!--</label>-->
+            <!--<label class="item item-input">-->
+                <!--<span class="input-label">密码：</span>-->
+                <!--<input type="password">-->
+            <!--</label>-->
+        <!--</div>-->
+        <!--<div class="padding">-->
+            <!--<button class="button button-block button-positive">登录</button>-->
+        <!--</div>-->
+
+        <!--<div class="list">-->
+            <!--<label class="item item-input item-stacked-label">-->
+                <!--<span class="input-label">First Name</span>-->
+                <!--<input type="text" placeholder="John">-->
+            <!--</label>-->
+            <!--<label class="item item-input item-stacked-label">-->
+                <!--<span class="input-label">Last Name</span>-->
+                <!--<input type="text" placeholder="Suhr">-->
+            <!--</label>-->
+            <!--<label class="item item-input item-stacked-label">-->
+                <!--<span class="input-label">Email</span>-->
+                <!--<input type="text" placeholder="john@suhr.com">-->
+            <!--</label>-->
+        <!--</div>-->
+        <!--<div class="padding">-->
+            <!--<button class="button button-block button-positive">Create Account</button>-->
+        <!--</div>-->
+
+        <!--<div class="list list-inset">-->
+            <!--<label class="item item-input">-->
+                <!--<i class="icon ion-search placeholder-icon"></i>-->
+                <!--<input type="text" placeholder="Search">-->
+            <!--</label>-->
+            <!--<div class="padding">-->
+            <!--<button class="button button-block button-positive">Create Account</button>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<ul class="list">-->
+            <!--<li class="item item-toggle">-->
+                <!--HTML5-->
+                <!--<label class="toggle toggle-positive">-->
+                    <!--<input type="checkbox" checked>-->
+                    <!--<div class="track">-->
+                        <!--<div class="handle"></div>-->
+                    <!--</div>-->
+                <!--</label>-->
+            <!--</li>-->
+            <!--<li class="item item-toggle">-->
+                <!--CSS3-->
+                <!--<label class="toggle toggle-calm">-->
+                    <!--<input type="checkbox" checked>-->
+                    <!--<div class="track">-->
+                        <!--<div class="handle"></div>-->
+                    <!--</div>-->
+                <!--</label>-->
+            <!--</li>-->
+            <!--<li class="item item-toggle">-->
+                <!--Flashplayer-->
+                <!--<label class="toggle toggle-balanced">-->
+                    <!--<input type="checkbox">-->
+                    <!--<div class="track">-->
+                        <!--<div class="handle"></div>-->
+                    <!--</div>-->
+                <!--</label>-->
+            <!--</li>-->
+            <!--<li class="item item-toggle">-->
+                <!--Java Applets-->
+                <!--<label class="toggle toggle-energized">-->
+                    <!--<input type="checkbox">-->
+                    <!--<div class="track">-->
+                        <!--<div class="handle"></div>-->
+                    <!--</div>-->
+                <!--</label>-->
+            <!--</li>-->
+            <!--<li class="item item-toggle">-->
+                <!--JavaScript-->
+                <!--<label class="toggle toggle-assertive">-->
+                    <!--<input type="checkbox" checked>-->
+                    <!--<div class="track">-->
+                        <!--<div class="handle"></div>-->
+                    <!--</div>-->
+                <!--</label>-->
+            <!--</li>-->
+            <!--<li class="item item-toggle">-->
+                <!--Silverlight-->
+                <!--<label class="toggle toggle-royal">-->
+                    <!--<input type="checkbox">-->
+                    <!--<div class="track">-->
+                        <!--<div class="handle"></div>-->
+                    <!--</div>-->
+                <!--</label>-->
+            <!--</li>-->
+            <!--<li class="item item-toggle">-->
+                <!--Web Components-->
+                <!--<label class="toggle toggle-dark">-->
+                    <!--<input type="checkbox" checked>-->
+                    <!--<div class="track">-->
+                        <!--<div class="handle"></div>-->
+                    <!--</div>-->
+                <!--</label>-->
+            <!--</li>-->
+        <!--</ul>-->
+
+        <!--<ul class="list">-->
+            <!--<li class="item item-checkbox">-->
+                <!--<label class="checkbox">-->
+                    <!--<input type="checkbox" checked="">-->
+                <!--</label>-->
+                <!--Flux Capacitor-->
+            <!--</li>-->
+            <!--<li class="item item-checkbox">-->
+                <!--<label class="checkbox">-->
+                    <!--<input type="checkbox" checked="">-->
+                <!--</label>-->
+                <!--1.21 Gigawatts-->
+            <!--</li>-->
+            <!--<li class="item item-checkbox">-->
+                <!--<label class="checkbox">-->
+                    <!--<input type="checkbox" checked="">-->
+                <!--</label>-->
+                <!--Delorean-->
+            <!--</li>-->
+            <!--<li class="item item-checkbox">-->
+                <!--<label class="checkbox">-->
+                    <!--<input type="checkbox" checked="">-->
+                <!--</label>-->
+                <!--88 MPH-->
+            <!--</li>-->
+            <!--<li class="item item-checkbox">-->
+                <!--<label class="checkbox">-->
+                    <!--<input type="checkbox">-->
+                <!--</label>-->
+                <!--Plutonium Resupply-->
+            <!--</li>-->
+        <!--</ul>-->
+
+        <!--<div class="list">-->
+
+            <!--<label class="item item-radio">-->
+                <!--<input type="radio" name="group" value="go" checked="checked">-->
+                <!--<div class="item-content">-->
+                    <!--Go-->
+                <!--</div>-->
+                <!--<i class="radio-icon ion-checkmark"></i>-->
+            <!--</label>-->
+
+            <!--<label class="item item-radio">-->
+                <!--<input type="radio" name="group" value="python">-->
+                <!--<div class="item-content">-->
+                    <!--Python-->
+                <!--</div>-->
+                <!--<i class="radio-icon ion-checkmark"></i>-->
+            <!--</label>-->
+
+            <!--<label class="item item-radio">-->
+                <!--<input type="radio" name="group" value="ruby">-->
+                <!--<div class="item-content">-->
+                    <!--Ruby-->
+                <!--</div>-->
+                <!--<i class="radio-icon ion-checkmark"></i>-->
+            <!--</label>-->
+
+            <!--<label class="item item-radio">-->
+                <!--<input type="radio" name="group" value=".net">-->
+                <!--<div class="item-content">-->
+                    <!--.Net-->
+                <!--</div>-->
+                <!--<i class="radio-icon ion-checkmark"></i>-->
+            <!--</label>-->
+
+            <!--<label class="item item-radio">-->
+                <!--<input type="radio" name="group" value="java">-->
+                <!--<div class="item-content">-->
+                    <!--Java-->
+                <!--</div>-->
+                <!--<i class="radio-icon ion-checkmark"></i>-->
+            <!--</label>-->
+
+            <!--<label class="item item-radio">-->
+                <!--<input type="radio" name="group" value="php">-->
+                <!--<div class="item-content">-->
+                    <!--PHP-->
+                <!--</div>-->
+                <!--<i class="radio-icon ion-checkmark"></i>-->
+            <!--</label>-->
+
+        <!--</div>-->
+
+
+        <!--<div class="range">-->
+            <!--<i class="icon ion-volume-low"></i>-->
+            <!--<input type="range" name="volume">-->
+            <!--<i class="icon ion-volume-high"></i>-->
+        <!--</div>-->
+
+        <!--<div class="list" style="margin-top: 13px">-->
+            <!--<div class="item item-divider">-->
+                <!--Ranges In A List-->
+            <!--</div>-->
+            <!--<div class="item range range-positive">-->
+                <!--<i class="icon ion-ios-sunny-outline"></i>-->
+                <!--<input type="range" name="volume" min="0" max="100" value="12">-->
+                <!--<i class="icon ion-ios-sunny"></i>-->
+            <!--</div>-->
+            <!--<div class="item range range-calm">-->
+                <!--<i class="icon ion-ios-lightbulb-outline"></i>-->
+                <!--<input type="range" name="volume" min="0" max="100" value="25">-->
+                <!--<i class="icon ion-ios-lightbulb"></i>-->
+            <!--</div>-->
+            <!--<div class="item range range-balanced">-->
+                <!--<i class="icon ion-ios-bolt-outline"></i>-->
+                <!--<input type="range" name="volume" min="0" max="100" value="38">-->
+                <!--<i class="icon ion-ios-bolt"></i>-->
+            <!--</div>-->
+            <!--<div class="item range range-energized">-->
+                <!--<i class="icon ion-ios-moon-outline"></i>-->
+                <!--<input type="range" name="volume" min="0" max="100" value="50">-->
+                <!--<i class="icon ion-ios-moon"></i>-->
+            <!--</div>-->
+            <!--<div class="item range range-assertive">-->
+                <!--<i class="icon ion-ios-partlysunny-outline"></i>-->
+                <!--<input type="range" name="volume" min="0" max="100" value="63">-->
+                <!--<i class="icon ion-ios-partlysunny"></i>-->
+            <!--</div>-->
+            <!--<div class="item range range-royal">-->
+                <!--<i class="icon ion-ios-rainy-outline"></i>-->
+                <!--<input type="range" name="volume" min="0" max="100" value="75">-->
+                <!--<i class="icon ion-ios-rainy"></i>-->
+            <!--</div>-->
+            <!--<div class="item range range-dark">-->
+                <!--<i class="icon ion-ios-lightbulb-outline"></i>-->
+                <!--<input type="range" name="volume" min="0" max="100" value="88">-->
+                <!--<i class="icon ion-ios-lightbulb"></i>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="list">-->
+
+            <!--<div class="item item-input item-select">-->
+                <!--<div class="input-label">-->
+                    <!--Lightsaber-->
+                <!--</div>-->
+                <!--<select>-->
+                    <!--<option>Blue</option>-->
+                    <!--<option selected="">Green</option>-->
+                    <!--<option>Red</option>-->
+                <!--</select>-->
+            <!--</div>-->
+
+            <!--<div class="item item-input item-select">-->
+                <!--<div class="input-label">-->
+                    <!--Fighter-->
+                <!--</div>-->
+                <!--<select>-->
+                    <!--<option>ARC-170</option>-->
+                    <!--<option>A-wing</option>-->
+                    <!--<option>Delta-7</option>-->
+                    <!--<option>Naboo N-1</option>-->
+                    <!--<option>TIE</option>-->
+                    <!--<option selected="">X-wing</option>-->
+                    <!--<option>Y-wing</option>-->
+                <!--</select>-->
+            <!--</div>-->
+
+            <!--<div class="item item-input item-select">-->
+                <!--<div class="input-label">-->
+                    <!--Droid-->
+                <!--</div>-->
+                <!--<select>-->
+                    <!--<option>2-1B</option>-->
+                    <!--<option>B1</option>-->
+                    <!--<option>C-3PO</option>-->
+                    <!--<option>IG-88</option>-->
+                    <!--<option>IT-O</option>-->
+                    <!--<option selected="">R2-D2</option>-->
+                <!--</select>-->
+            <!--</div>-->
+
+            <!--<div class="item item-input item-select">-->
+                <!--<div class="input-label">-->
+                    <!--Planet-->
+                <!--</div>-->
+                <!--<select>-->
+                    <!--<option>Alderaan</option>-->
+                    <!--<option selected="">Dagobah</option>-->
+                    <!--<option>Felucia</option>-->
+                    <!--<option>Geonosis </option>-->
+                    <!--<option>Hoth</option>-->
+                    <!--<option>Kamino</option>-->
+                    <!--<option>Mygeeto</option>-->
+                    <!--<option>Naboo</option>-->
+                    <!--<option>Tataouine</option>-->
+                    <!--<option>Utapau</option>-->
+                    <!--<option>Yavin</option>-->
+                <!--</select>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="list">-->
+            <!--<div class="item tabs-secondary tabs">-->
+                <!--<a class="tab-item" href="#">-->
+                    <!--主页-->
+                <!--</a>-->
+                <!--<a class="tab-item" href="#">-->
+                    <!--收藏-->
+                <!--</a>-->
+                <!--<a class="tab-item" href="#">-->
+                    <!--设置-->
+                <!--</a>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <div class="row">
+            <div class="col">
+                <div class="col-demo">.col</div>
+            </div>
+            <div class="col">
+                <div class="col-demo">.col</div>
+            </div>
+            <div class="col">
+                <div class="col-demo">.col</div>
+            </div>
+            <div class="col">
+                <div class="col-demo">.col</div>
+            </div>
+            <div class="col">
+                <div class="col-demo">.col</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-50">
+                <div class="col-demo">.col.col-50</div>
+            </div>
+            <div class="col">
+                <div class="col-demo">.col</div>
+            </div>
+            <div class="col">
+                <div class="col-demo">.col</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-75">
+                <div class="col-demo">.col.col-75</div>
+            </div>
+            <div class="col">
+                <div class="col-demo">.col</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="col-demo">.col</div>
+            </div>
+            <div class="col col-75">
+                <div class="col-demo">.col.col-75</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="col-demo">.col</div>
+            </div>
+            <div class="col">
+                <div class="col-demo">.col</div>
+            </div>
+        </div>
+
+
+        <h1>weishenme</h1>
+     </div>
+
+
+
+
+
+
+
+    <!--<div class="tabs">-->
+        <!--<a class="tab-item" href="#">-->
+            <!--主页-->
+        <!--</a>-->
+        <!--<a class="tab-item" href="#">-->
+            <!--收藏-->
+        <!--</a>-->
+        <!--<a class="tab-item" href="#">-->
+            <!--设置-->
+        <!--</a>-->
+    <!--</div>-->
+
+    <!--<div class="tabs tabs-icon-only">-->
+        <!--<a class="tab-item" href="#">-->
+            <!--<i class="icon ion-home"></i>-->
+        <!--</a>-->
+        <!--<a class="tab-item" href="#">-->
+            <!--<i class="icon ion-star"></i>-->
+        <!--</a>-->
+        <!--<a class="tab-item" href="#">-->
+            <!--<i class="icon ion-gear-a"></i>-->
+        <!--</a>-->
+    <!--</div>-->
+
+    <!--<div class="tabs tabs-icon-top">-->
+        <!--<a class="tab-item" href="#">-->
+            <!--<i class="icon ion-home"></i>-->
+            <!--主页-->
+        <!--</a>-->
+        <!--<a class="tab-item" href="#">-->
+            <!--<i class="icon ion-star"></i>-->
+            <!--收藏-->
+        <!--</a>-->
+        <!--<a class="tab-item" href="#">-->
+            <!--<i class="icon ion-gear-a"></i>-->
+            <!--设置-->
+        <!--</a>-->
+    <!--</div>-->
+
+
+    <div class="tabs-striped tabs-color-assertive">
+        <div class="tabs tabs-icon-left">
+            <a class="tab-item active" href="#">
+                <i class="icon ion-home"></i>
+                测试
+            </a>
+            <a class="tab-item" href="#">
+                <i class="icon ion-star"></i>
+                收藏
+            </a>
+            <a class="tab-item" href="#">
+                <i class="icon ion-gear-a"></i>
+                设置
+            </a>
+        </div>
+    </div>
+
+    <!--<div class="bar bar-footer">-->
+        <!--<a href="" class="button">按钮1</a>-->
+        <!--<div class="title">footer</div>-->
+        <!--<a href="" class="button">按钮2</a>-->
+    <!--</div>-->
+
+<script src="ionic/js/ionic.bundle.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>

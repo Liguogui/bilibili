@@ -1,0 +1,39 @@
+
+.dialog {
+    position:absolute;
+    z-index:5000;
+    left: 50%;
+    top: 30%;
+    margin-left: -164px;
+    font-size: 14px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    background:#eee;
+    width:328px;
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.5);
+}
+.dialog .dialog-header {
+    padding: 10px 19px;
+    color: #fff;
+    background: #676666;
+}
+.dialog .dialog-header h3{
+    margin: 0;
+    font-size: 14px;
+}
+.dialog .dialog-header .btn-close{
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    font-family: fantasy;
+    cursor: pointer;
+}
+.dialog .dialog-content {
+    padding:10px;
+    margin:13px;
+    color:#666;
+    font-size:11px;
+}
+.dialog .dialog-footer{
+    text-align: center;
+}

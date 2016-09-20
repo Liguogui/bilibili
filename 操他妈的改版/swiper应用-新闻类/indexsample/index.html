@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Swiper中文网基础演示(www.swiper.com.cn)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+
+<link rel="stylesheet" href="css/swiper.min.css">
+<script src="js/jquery-1.10.1.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+#header {
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:999;
+	width: 100%;
+	height: 43px;
+	overflow: hidden;
+	background: #fdfdfc;
+	font: 12px/40px hiragino sans gb, microsoft yahei, simsun;
+	box-shadow:3px 3px 3px rgba(0,0,0,0.2);
+}
+#top-line {
+	width: 100%;
+	height: 3px;
+	line-height: 0;
+	font-size: 0;
+	overflow: hidden;
+	text-align: center;
+	z-index: 1;
+	background-color: #0fa6ea;
+	background: -webkit-linear-gradient(left, rgba(15,166,234,1) 0, rgba(89,204,24,1) 10%, rgba(15,166,234,1) 60%, rgba(15,166,234,1) 100%);
+	background: -moz-linear-gradient(left, rgba(15,166,234,1) 0, rgba(89,204,24,1) 10%, rgba(15,166,234,1) 60%, rgba(15,166,234,1) 100%);
+	background: -ms-linear-gradient(left, rgba(15,166,234,1) 0, rgba(89,204,24,1) 10%, rgba(15,166,234,1) 60%, rgba(15,166,234,1) 100%);
+	background: linear-gradient(left, rgba(15,166,234,1) 0, rgba(89,204,24,1) 10%, rgba(15,166,234,1) 60%, rgba(15,166,234,1) 100%);
+}
+#header .swiper-slide {
+	padding: 0 20px;
+	width:auto;
+}
+#banner {
+	width: 100%;
+	height:170px;
+	overflow: hidden;
+	margin-top:43px;
+	position:relative;
+}
+#banner .swiper-slide {
+	position:relative;
+	text-align:center;
+}
+#banner img {
+	max-width: 100%;
+}
+.gallerytitle {
+text-align: center;
+font-size: 1em;
+height: 42px;
+line-height: 42px;
+color: #fafafa;
+position: absolute;
+left: 0;
+bottom: 0;
+right: 0;
+font-weight: normal;
+text-shadow: 1px 1px 1px #000;
+/* background-color: rgba(21,20,20,0.5); */
+background-color: rgba(0,0,0,0);
+background: -moz-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0.7));
+background: -webkit-gradient(linear,top,from(rgba(0,0,0,0)),to(rgba(0,0,0,0.7)));
+background: -webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0.7));
+background: -o-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0.7));
+}
+.pagination {
+  position: absolute;
+  z-index: 20;
+  bottom: 10px;
+  width: 66px;
+  text-align: center;
+  right:0;
+}
+.swiper-pagination-bullet {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius:5px;
+  background: #fff;
+  margin: 0 2px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.swiper-pagination-bullet-active {
+  background: #ff6600;
+}
+#tabs-container{
+	height:400px;
+}
+.tabs{
+	margin-top:20px;
+	border-top: 2px solid #9ac7ed;
+	background:url(images/headbg.png) no-repeat left top #f9fafa;
+	background-size:auto 100%;
+	width:100%;
+	height:38px;
+	overflow:hidden;
+}
+.tabs a{
+font-size: 1.125em;
+font-weight: normal;
+text-align: center;
+float: left;
+width: 64px;
+height: 38px;
+line-height: 38px;
+color: #2a70be;
+}
+.tabs a.active {
+border-top: 2px solid #2a70be;
+margin-top: -2px;
+background-image: url(images/tab_ui.png);
+background-repeat: no-repeat;
+-webkit-background-size: 64px 39px;
+-moz-background-size: 64px 39px;
+-o-background-size: 64px 39px;
+background-size: 64px 39px;
+background-position: left top;
+color: #c14545;
+}
+.news-list{
+	padding:0 10px;
+}
+.news-list li{
+	overflow: hidden;
+border-bottom: 1px solid #eceef0;
+box-shadow: 0 1px 1px #fff;
+font-weight: normal;
+height: 35px;
+line-height: 35px;
+font-size: 1.125em;
+}
+</style>
+</head>
+<body>
+<div id="header">
+  <div id="top-line"></div>
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">新闻</div>
+    <div class="swiper-slide">财经</div>
+    <div class="swiper-slide">娱乐</div>
+    <div class="swiper-slide">体育</div>
+    <div class="swiper-slide">订阅</div>
+    <div class="swiper-slide">微博</div>
+    <div class="swiper-slide">空间</div>
+    <div class="swiper-slide">书城</div>
+  </div>
+</div>
+<div id="banner">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="images/0.jpg" /><h2 class="gallerytitle">孙俪芈月造型亮相 清纯似少女</h2></div>
+    <div class="swiper-slide"><img src="images/1.jpg" /><h2 class="gallerytitle">Angelababy弟弟曝光 五官精致颜值爆表</h2></div>
+  </div>
+<div class="pagination"></div>  
+</div>
+
+
+
+<div class="tabs"> <a href="#" class="active">新闻</a> <a href="#" >社会</a> <a href="#">军事</a> </div>
+  <div id="tabs-container" class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="content-slide">
+        <ul class="news-list">
+       <li>朝鲜逃兵越境杀4名中国人被捕</li>
+<li>温州立人集团非法吸存案宣判</li>
+<li>陈水扁坐狱6年后获准保外就医</li>
+<li>她们的家长不觉得丢人吗？</li>
+<li>1名韩国毒贩在华被执行死刑</li>
+<li>呼格案疑似真凶赵志红受审</li>
+<li>媒体披露杨卫泽被带走细节</li>
+<li>改样板戏，你能比徐克牛吗?</li>
+<li>社保缴费狂涨：穷人不堪重负</li>
+<li>A股美元：当负相关已成往事</li>
+
+        </ul>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="content-slide">
+         <ul class="news-list">
+       <li>
+        巨型野生灵芝直径1米多</li>
+<li>那些年 被毁过的童年照</li>
+<li>男子为侄儿设计“大白鲨”床</li>
+<li>女子婚后发现车房全是借来的</li>
+<li>女子钓到800斤金枪鱼</li>
+<li>濒危动物并非全都可爱</li>
+<li>贫困大学生捡万元现金交警察</li>
+<li>女子裸体钻烟囱欲见前男友</li>
+<li>父亲将女儿房子赠给自己被告</li>
+<li>少女开颅手术中醒来询问进程</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="content-slide"> <ul class="news-list">
+       <li>
+        韩国也山寨"机器大狗":能跑能跳</li>
+   <li>杨子荣智取威虎山的前前后后</li>
+   <li>中国近2年已猛造100艘舰艇</li>
+   <li>兵王练瞄准用眼过度 险些失明</li>
+   <li>美媒称中日开战美国有2种结局</li>
+   <li>俄神秘电台连续40年发送信号</li>
+   <li>专家:翼龙战机可部署中越边境</li>
+   <li>驻藏战士前行500米用1小时</li>
+   <li>"太行"行了:歼11B重歼大批下线</li>
+   <li>中国水下机器人可攻击敌蛙人
+</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script type="text/javascript">
+window.onload = function() {
+  var mySwiper1 = new Swiper('#header',{
+	  freeMode : true,
+	  slidesPerView : 'auto',
+  });
+  var mySwiper2 = new Swiper('#banner',{
+	  autoplay:5000,
+	  visibilityFullFit : true,
+	  loop:true,
+	  pagination : '.pagination',
+  });
+  
+  var tabsSwiper = new Swiper('#tabs-container',{
+    speed:500,
+    onSlideChangeStart: function(){
+      $(".tabs .active").removeClass('active')
+      $(".tabs a").eq(tabsSwiper.activeIndex).addClass('active')  
+    }
+  })
+  $(".tabs a").on('touchstart mousedown',function(e){
+    e.preventDefault();
+    $(".tabs .active").removeClass('active');
+    $(this).addClass('active');
+    tabsSwiper.slideTo( $(this).index() )
+  });
+  $(".tabs a").click(function(e){
+    e.preventDefault()
+  })
+  
+}
+</script>
+</body>
+</html>

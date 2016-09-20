@@ -1,0 +1,21 @@
+a.btn {
+    position: relative;
+    text-align: center;
+    background-color: #e33100;
+    display: inline-block;
+    width: 50px;
+    padding: 5px 0 6px;
+    margin: 2px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+a.btn:hover {
+    background-color: #c33100;
+}
+
+.draggable{
+    opacity: 0.8;
+    cursor:move;
+}

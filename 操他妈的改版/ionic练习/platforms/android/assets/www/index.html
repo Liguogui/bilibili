@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Todo</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link href="../ionic/css/ionic.css" rel="stylesheet">
+
+</head>
+<body ng-controller="myController">
+<ion-side-menus>
+
+    <!-- 中心内容 -->
+    <ion-side-menu-content>
+        <ion-header-bar class="bar-dark">
+            <button class="button button-icon" ng-click="toggleProjects()">
+                <i class="icon ion-navicon"></i>
+            </button>
+            <h1 class="title">{{activeProject.title}}</h1>
+            <!-- 新增按钮 -->
+            <button class="button button-icon" ng-click="newTask()">
+                <i class="icon ion-compose"></i>
+            </button>
+        </ion-header-bar>
+        <ion-content scroll="false">
+            <ion-list>
+                <ion-item ng-repeat="task in activeProject.tasks">
+                    {{task.title}}
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu-content>
+
+    <!-- 左边栏 -->
+    <ion-side-menu side="left">
+        <ion-header-bar class="bar-dark">
+            <h1 class="title">Projects</h1>
+            <button class="button button-icon ion-plus" ng-click="newProject()">
+            </button>
+        </ion-header-bar>
+        <ion-content scroll="false">
+            <ion-list>
+                <ion-item ng-repeat="project in projects" ng-click="selectProject(project, $index)" ng-class="{active: activeProject == project}">
+                    {{project.title}}
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+
+</ion-side-menus>
+
+<!--通过 <script id="new-task.html" type="text/ng-template"> 定义了新的模板页面。-->
+<script id="new-task.html" type="text/ng-template">
+
+    <div class="modal">
+
+        <!-- Modal header bar -->
+        <ion-header-bar class="bar-secondary">
+            <h1 class="title">New Task</h1>
+            <button class="button button-clear button-positive" ng-click="closeNewTask()">Cancel</button>
+        </ion-header-bar>
+
+        <!-- Modal content area -->
+        <ion-content>
+
+            <form ng-submit="createTask(task)">
+                <div class="list">
+                    <label class="item item-input">
+                        <input type="text" placeholder="What do you need to do?" ng-model="task.title">
+                    </label>
+                </div>
+                <div class="padding">
+                    <button type="submit" class="button button-block button-positive">Create Task</button>
+                </div>
+            </form>
+
+        </ion-content>
+
+    </div>
+
+</script>
+
+
+
+    <script src="../ionic/js/ionic.bundle.js"></script>
+    <script>
+        var app = angular.module('myApp', ['ionic']);
+        app.factory('Projects', function() {
+            return {
+                all: function() {
+                    var projectString = window.localStorage['projects'];
+                    if(projectString) {
+                        return angular.fromJson(projectString);
+                    }
+                    return [];
+                },
+                save: function(projects) {
+                    window.localStorage['projects'] = angular.toJson(projects);
+                },
+                newProject: function(projectTitle) {
+                    // Add a new project
+                    return {
+                        title: projectTitle,
+                        tasks: []
+                    };
+                },
+                getLastActiveIndex: function() {
+                    return parseInt(window.localStorage['lastActiveProject']) || 0;
+                },
+                setLastActiveIndex: function(index) {
+                    window.localStorage['lastActiveProject'] = index;
+                }
+            }
+        });
+        app.controller('myController', function($scope, $timeout, $ionicModal, Projects, $ionicSideMenuDelegate) {
+
+                    // A utility function for creating a new project
+                    // with the given projectTitle
+                    var createProject = function(projectTitle) {
+                        var newProject = Projects.newProject(projectTitle);
+                        $scope.projects.push(newProject);
+                        Projects.save($scope.projects);
+                        $scope.selectProject(newProject, $scope.projects.length-1);
+                    }
+
+
+                    // Load or initialize projects
+                    $scope.projects = Projects.all();
+
+                    // Grab the last active, or the first project
+                    $scope.activeProject = $scope.projects[Projects.getLastActiveIndex()];
+
+                    // Called to create a new project
+                    $scope.newProject = function() {
+                        var projectTitle = prompt('Project name');
+                        if(projectTitle) {
+                            createProject(projectTitle);
+                        }
+                    };
+
+                    // Called to select the given project
+                    $scope.selectProject = function(project, index) {
+                        $scope.activeProject = project;
+                        Projects.setLastActiveIndex(index);
+                        $ionicSideMenuDelegate.toggleLeft(false);
+                    };
+
+                    // Create our modal
+                    $ionicModal.fromTemplateUrl('new-task.html', function(modal) {
+                        $scope.taskModal = modal;
+                    }, {
+                        scope: $scope
+                    });
+
+                    $scope.createTask = function(task) {
+                        if(!$scope.activeProject || !task) {
+                            return;
+                        }
+                        $scope.activeProject.tasks.push({
+                            title: task.title
+                        });
+                        $scope.taskModal.hide();
+
+                        // Inefficient, but save all the projects
+                        Projects.save($scope.projects);
+
+                        task.title = "";
+                    };
+
+                    $scope.newTask = function() {
+                        $scope.taskModal.show();
+                    };
+
+                    $scope.closeNewTask = function() {
+                        $scope.taskModal.hide();
+                    }
+
+                    $scope.toggleProjects = function() {
+                        $ionicSideMenuDelegate.toggleLeft();
+                    };
+
+
+                    // Try to create the first project, make sure to defer
+                    // this by using $timeout so everything is initialized
+                    // properly
+                    $timeout(function() {
+                        if($scope.projects.length == 0) {
+                            while(true) {
+                                var projectTitle = prompt('Your first project title:');
+                                if(projectTitle) {
+                                    createProject(projectTitle);
+                                    break;
+                                }
+                            }
+                        }
+                    });
+
+                });
+
+    </script>
+
+    <!-- 在使用 Cordova/PhoneGap 创建的 APP 中包含的文件，由 Cordova/PhoneGap 提供，(开发过程中显示 404) -->
+    <script src="cordova.js"></script>
+</body>
+</html>

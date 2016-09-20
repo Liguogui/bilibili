@@ -1,0 +1,138 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>菜鸟教程(runoob.com)</title>
+    <link rel="stylesheet" href="ionic/css/ionic.min.css">
+    <script src="ionic/js/ionic.bundle.min.js"></script>
+    <script type="text/javascript">
+
+        angular.module('starter', ['ionic'])
+                .run(function($ionicPlatform) {
+                    $ionicPlatform.ready(function() {
+                        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+                        // for form inputs)
+                        if(window.cordova && window.cordova.plugins.Keyboard) {
+                            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+                        }
+                        if(window.StatusBar) {
+                            // org.apache.cordova.statusbar required
+                            StatusBar.styleDefault();
+                        }
+                    });
+                })
+                .config(function($stateProvider, $urlRouterProvider) {
+                    $stateProvider
+
+                            .state('app', {
+                                url: "/app",
+                                abstract: true,
+                                templateUrl: "menu.html",
+                                controller: 'AppCtrl'
+                            })
+
+                            .state('app.playlists', {
+                                url: "/playlists",
+                                views: {
+                                    'menuContent' :{
+                                        templateUrl: "playlists.html",
+                                        controller: 'PlaylistsCtrl'
+                                    }
+                                }
+                            })
+
+
+                    // if none of the above states are matched, use this as the fallback
+                    $urlRouterProvider.otherwise('/app/playlists');
+                })
+
+                .controller('AppCtrl', function($scope) {
+                })
+
+                .controller('PlaylistsCtrl', function($scope) {
+                    console.log("PlaylistsCtrl");
+                    $scope.playlists = [
+                        { title: 'Reggae', id: 1 },
+                        { title: 'Chill', id: 2 },
+                        { title: 'Dubstep', id: 3 },
+                        { title: 'Indie', id: 4 },
+                        { title: 'Rap', id: 5 },
+                        { title: 'Cowbell', id: 6 }
+                    ];
+                })
+
+                .controller('PlaylistCtrl', function($scope, $stateParams) {
+                })
+
+    </script>
+
+</head>
+
+<body ng-app="starter">
+<ion-nav-view></ion-nav-view>
+
+<script id="menu.html" type="text/ng-template">
+
+    <ion-side-menus>
+
+        <ion-pane ion-side-menu-content>
+            <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+                <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i></ion-nav-back-button>
+            </ion-nav-bar>
+            <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+        </ion-pane>
+
+        <ion-side-menu side="left">
+            <header class="bar bar-header bar-stable">
+                <h1 class="title">Left</h1>
+            </header>
+            <ion-content class="has-header">
+                <ion-list>
+                    <ion-item nav-clear menu-close href="#/app/search">
+                        Search
+                    </ion-item>
+                    <ion-item nav-clear menu-close href="#/app/browse">
+                        Browse
+                    </ion-item>
+                    <ion-item nav-clear menu-close href="#/app/playlists">
+                        Playlists
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-side-menu>
+    </ion-side-menus>
+
+</script>
+
+<script id="playlists.html" type="text/ng-template">
+    <ion-view title="Playlists">
+        <ion-nav-buttons side="left">
+            <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+        </ion-nav-buttons>
+
+
+        <ion-tabs class="tabs-positive tabs-icon-only">
+
+            <ion-tab title="Home" icon="ion-home">
+                <h1>这里是home</h1>
+                <h1>这里是home</h1>
+            </ion-tab>
+
+            <ion-tab title="About" icon="ion-ios-information">
+                <h1>这里是about</h1>
+                <h1>这里是about</h1>
+            </ion-tab>
+
+            <ion-tab title="Contact" icon="ion-ios-world" >
+                <h1>这里是contact</h1>
+                <h1>这里是contact</h1>
+            </ion-tab>
+
+        </ion-tabs>
+
+    </ion-view>
+</script>
+
+
+</body>
+</html>
